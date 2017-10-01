@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/Views/RAIDAPage.xaml">
+    <Files>
+      <File FileName="CloudCoin.CE/Views/MainPage.cs" Line="51" Column="46" />
+      <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml" Line="7" Column="9" />
+      <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml.cs" Line="30" Column="6" />
+      <File FileName="CloudCoin.CE/Views/ItemsPage.xaml" Line="13" Column="8" />
+      <File FileName="CloudCoinCore/CoinUtils.cs" Line="4" Column="23" />
+      <File FileName="CloudCoinCore/RAIDA.cs" Line="6" Column="1" />
+      <File FileName="CloudCoinCore/DetectionAgent.cs" Line="249" Column="1" />
+      <File FileName="CloudCoin.CE/App.xaml.cs" Line="23" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.ItemProperties.CloudCoin.CE.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4CE1E3E-6989-4B4B-95D9-60F89A505AC3">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.CloudCoin.CE.iOS>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.CloudCoin.CE.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,6 +1,11 @@
-﻿using UIKit;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace CloudCoin.CE.iOS.iOS
+using Foundation;
+using UIKit;
+
+namespace CloudCoin.CE.iOS
 {
     public class Application
     {

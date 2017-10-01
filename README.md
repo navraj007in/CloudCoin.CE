@@ -1,1 +1,0 @@
-# CloudCoin.CE.iOS
