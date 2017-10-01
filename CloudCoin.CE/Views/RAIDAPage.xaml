@@ -4,13 +4,12 @@
     xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CloudCoin.CE.Views.RAIDAPage">
 	<ContentPage.Content>
         
-    <StackLayout  >
-        
-       <maps:Map x:Name="map" 
-        WidthRequest="320" HeightRequest="200"
-            IsShowingUser="true" 
+        <AbsoluteLayout >
+              <maps:Map x:Name="map" 
+       AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"     IsShowingUser="true" 
             MapType="Hybrid"/>
 
-        </StackLayout>
-	</ContentPage.Content>
+        <Button x:Name="cmdRefresh" Clicked="Handle_Clicked" Text="Refresh"/>
+            </AbsoluteLayout>
+ 	</ContentPage.Content>
 </ContentPage>

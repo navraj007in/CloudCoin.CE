@@ -114,6 +114,14 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\android-chrome-60-60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\android-chrome-57-57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\android-chrome-87-87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\android-chrome-57-57 copy.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\android-chrome-80-80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\android-chrome-120-120-2.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\android-chrome-180-180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\android-chrome-120-120-2 copy.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\tab_about.png" />

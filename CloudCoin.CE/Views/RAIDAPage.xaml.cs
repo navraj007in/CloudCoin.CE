@@ -35,7 +35,15 @@ namespace CloudCoin.CE.Views
             //echoRaida();
         }
 
-		public bool echoRaida()
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+			Task.Run(() => {
+				echoRaida();
+			});
+
+		}
+
+        public bool echoRaida()
 		{
 			RAIDA_Status.resetEcho();
 			RAIDA raida1 = new RAIDA(5000);

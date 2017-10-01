@@ -1,14 +1,8 @@
 ﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/Views/RAIDAPage.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/Views/RAIDAPage.xaml.cs">
     <Files>
-      <File FileName="CloudCoin.CE/Views/MainPage.cs" Line="51" Column="46" />
-      <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml" Line="7" Column="9" />
-      <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml.cs" Line="30" Column="6" />
-      <File FileName="CloudCoin.CE/Views/ItemsPage.xaml" Line="13" Column="8" />
-      <File FileName="CloudCoinCore/CoinUtils.cs" Line="4" Column="23" />
-      <File FileName="CloudCoinCore/RAIDA.cs" Line="6" Column="1" />
-      <File FileName="CloudCoinCore/DetectionAgent.cs" Line="249" Column="1" />
-      <File FileName="CloudCoin.CE/App.xaml.cs" Line="23" Column="17" />
+      <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml" Line="13" Column="60" />
+      <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml.cs" Line="9" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
