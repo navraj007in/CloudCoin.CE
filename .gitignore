@@ -1,2 +1,9 @@
+packages
+CloudCoinCore/bin
+CloudCoinCore/obj
+Droid/bin
+Droid/obj
+iOS/bin
+iOS/obj
 
 
