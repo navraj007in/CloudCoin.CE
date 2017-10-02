@@ -1,12 +1,9 @@
-﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
+﻿<Properties StartupConfiguration="{B2417C84-E981-4734-9936-B92B2A51F84F}|Default">
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.CloudCoinCE PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4CE1E3E-6989-4B4B-95D9-60F89A505AC3" identitySerialNumber="1433F0AFCB507A87">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="62UR93U2G9" TeamId="9M3DA6YP8B" />
-  </MonoDevelop.Ide.ItemProperties.CloudCoinCE>
   <MonoDevelop.Ide.ItemProperties.CloudCoin.CE.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

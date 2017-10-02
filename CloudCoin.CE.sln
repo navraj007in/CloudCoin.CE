@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CloudCoin.CE", "CloudCoin.CE\CloudCoin.CE.shproj", "{BFF05CCA-11E7-447C-A8DF-25D163BABD66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoin.CE.iOS", "iOS\CloudCoin.CE.iOS.csproj", "{D2E45F58-1305-4F45-8EB3-62B01B3AC259}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinCE", "iOS\CloudCoinCE.csproj", "{D2E45F58-1305-4F45-8EB3-62B01B3AC259}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoin.CE.Droid", "Droid\CloudCoin.CE.Droid.csproj", "{B2417C84-E981-4734-9936-B92B2A51F84F}"
 EndProject

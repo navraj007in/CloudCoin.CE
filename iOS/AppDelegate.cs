@@ -16,7 +16,7 @@ namespace CloudCoin.CE.iOS
             LoadApplication(new App());
 
 
-
+            var obk = new FilePicker();
             return base.FinishedLaunching(app, options);
         }
     }

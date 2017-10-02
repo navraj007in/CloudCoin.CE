@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CloudCoin.CE.Views.HomePage">
+	<ContentPage.Content>
+        <AbsoluteLayout Padding="10,10">
+            <StackLayout Orientation="Horizontal" AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+             <Button Text="Import" BackgroundColor="Silver" 
+                TextColor = "White" WidthRequest="100"
+                x:Name="cmdImport" Clicked="Handle_Clicked"></Button>
+            <Button AnchorX="80"  Text="Export" AnchorY="60" BackgroundColor="Silver" 
+                TextColor = "White" 
+                x:Name="cmdExport" Clicked="HandleExport_Clicked" WidthRequest="100"></Button>
+       
+            </StackLayout>
+        </AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

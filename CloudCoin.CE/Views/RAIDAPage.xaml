@@ -8,7 +8,7 @@
               <maps:Map x:Name="map" 
        AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"     IsShowingUser="true" 
             MapType="Hybrid"/>
-
+           
         <Button x:Name="cmdRefresh" Clicked="Handle_Clicked" Text="Refresh"/>
             </AbsoluteLayout>
  	</ContentPage.Content>

@@ -14,7 +14,7 @@ namespace CloudCoin.CE
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
-                    itemsPage = new NavigationPage(new ItemsPage())
+                    itemsPage = new NavigationPage(new HomePage())
                     {
                         Title = "Browse"
                     };
