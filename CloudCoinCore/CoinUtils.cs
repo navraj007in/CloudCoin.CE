@@ -41,6 +41,17 @@ namespace Founders
 
         }//end constructor
 
+		public delegate void StatusUpdateHandler(object sender, ProgressEventArgs e);
+		public event StatusUpdateHandler OnUpdateStatus;
+		private void UpdateStatus(string status)
+		{
+			// Make sure someone is listening to event
+			if (OnUpdateStatus == null) return;
+
+			ProgressEventArgs args = new ProgressEventArgs(status);
+			OnUpdateStatus(this, args);
+		}
+
         public string getPastStatus(int raida_id)
         {
             string returnString = "";

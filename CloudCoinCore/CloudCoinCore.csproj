@@ -38,6 +38,7 @@
     <Compile Include="CloudCoin.cs" />
     <Compile Include="DetectionAgent.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="ProgressEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">

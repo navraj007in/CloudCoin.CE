@@ -1,6 +1,11 @@
 ﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
-  <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/Views/HomePage.xaml.cs">
+    <Files>
+      <File FileName="CloudCoinCore/ProgressEventArgs.cs" Line="11" Column="1" />
+      <File FileName="CloudCoin.CE/Views/HomePage.xaml.cs" Line="48" Column="43" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

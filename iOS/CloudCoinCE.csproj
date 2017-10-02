@@ -138,13 +138,22 @@
     <BundleResource Include="Resources\xamarin_logo.png" />
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
-    <BundleResource Include="Import\5.CloudCoins.91.stack">
+    <BundleResource Include="CloudCoin\Templates\jpeg1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="Import\5..03-09-17.15-51.stack">
+    <BundleResource Include="CloudCoin\Templates\jpeg5.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
-    <BundleResource Include="CloudCoin\Import\5..03-09-17.15-51.stack">
+    <BundleResource Include="CloudCoin\Templates\jpeg25.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="CloudCoin\Templates\jpeg100.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="CloudCoin\Templates\jpeg250.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="CloudCoin\Import\10.CloudCoins..stack">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </BundleResource>
   </ItemGroup>
@@ -157,6 +166,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <None Include="packages.config" />
+    <None Include="Import\238000.CloudCoin.b37m2_15457896.stack" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

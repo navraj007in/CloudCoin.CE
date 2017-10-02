@@ -2,6 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CloudCoin.CE.Views.HomePage">
 	<ContentPage.Content>
         <AbsoluteLayout Padding="10,10">
+        <StackLayout Orientation="Vertical" AbsoluteLayout.LayoutBounds="0.3, 0.3, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
+                <StackLayout Orientation="Horizontal" >
+                      <ProgressBar x:Name="ImportProgress" AbsoluteLayout.LayoutBounds="0.2,0.2"
+                HorizontalOptions="Center"   AbsoluteLayout.LayoutFlags="PositionProportional" WidthRequest="200"
+                ></ProgressBar>
+                <Label x:Name="lblProgress" ></Label>
+        
+                </StackLayout>
+                <Label x:Name="lblProgressMessage" ></Label>
+        
+                </StackLayout>
             <StackLayout Orientation="Horizontal" AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
              <Button Text="Import" BackgroundColor="Silver" 
                 TextColor = "White" WidthRequest="100"
@@ -9,7 +20,8 @@
             <Button AnchorX="80"  Text="Export" AnchorY="60" BackgroundColor="Silver" 
                 TextColor = "White" 
                 x:Name="cmdExport" Clicked="HandleExport_Clicked" WidthRequest="100"></Button>
-       
+
+
             </StackLayout>
         </AbsoluteLayout>
 	</ContentPage.Content>

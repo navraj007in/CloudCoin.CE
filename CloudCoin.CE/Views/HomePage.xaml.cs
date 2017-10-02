@@ -5,12 +5,15 @@ using Xamarin.Forms;
 using System.IO;
 using Founders;
 using System.Linq;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace CloudCoin.CE.Views
 {
     public partial class HomePage : ContentPage
     {
-        FileUtils fileUtils = FileUtils.GetInstance("CloudCoin");   
+        public static int timeout = 10000;
+		FileUtils fileUtils = FileUtils.GetInstance("CloudCoin");   
         public HomePage()
         {
             InitializeComponent();
@@ -26,12 +29,70 @@ namespace CloudCoin.CE.Views
                 Console.WriteLine(fi.FullName);
             }
             Console.WriteLine("Length " + count);
-			import();
-
+            Task.Run(() => {
+				import();
+                
+			});
+			
+            
 			//DependencyService.Get<IFilePicker>().pickFile();
 		}
 
-        private void updateLog(String msg){
+		void Detector_OnUpdateStatus(object sender, ProgressEventArgs e)
+		{
+			updateLog(e.Status);
+			Device.BeginInvokeOnMainThread(() => {
+
+				ImportProgress.ProgressTo(e.percentage, 10000, Easing.Linear);
+                lblProgress.Text = e.percentage + " % completed.";
+                lblProgressMessage.Text = e.Status;
+			});
+        }
+
+		public void detect()
+		{
+			Stopwatch stopwatch = new Stopwatch();
+			stopwatch.Start();
+			Console.Out.WriteLine("");
+			updateLog("  Detecting Authentication of Suspect Coins");
+
+			Console.Out.WriteLine("  Detecting Authentication of Suspect Coins");// "Detecting Authentication of Suspect Coins");
+			Detector detector = new Detector(fileUtils, timeout);
+
+			detector.OnUpdateStatus += Detector_OnUpdateStatus;
+
+			int[] detectionResults = detector.detectAll();
+			Console.Out.WriteLine("  Total imported to bank: " + detectionResults[0]);//"Total imported to bank: "
+																					  //Console.Out.WriteLine("  Total imported to fracked: " + detectionResults[2]);//"Total imported to fracked: "
+			updateLog("  Total imported to bank: " + detectionResults[0]);
+			//updateLog("  Total imported to fracked: " + detectionResults[2]);
+			// And the bank and the fractured for total
+			Console.Out.WriteLine("  Total Counterfeit: " + detectionResults[1]);//"Total Counterfeit: "
+			Console.Out.WriteLine("  Total Kept in suspect folder: " + detectionResults[3]);//"Total Kept in suspect folder: " 
+			updateLog("  Total Counterfeit: " + detectionResults[1]);
+			updateLog("  Total Kept in suspect folder: " + detectionResults[3]);
+			updateLog("  Total Notes imported to Bank: " + detector.totalImported);
+
+			//            showCoins();
+			stopwatch.Stop();
+			Console.Out.WriteLine(stopwatch.Elapsed + " ms");
+			updateLog("Time to import " + detectionResults[0] + " Coins: " + stopwatch.Elapsed.ToCustomString() + "");
+
+            Device.BeginInvokeOnMainThread(() => {
+
+				ImportProgress.ProgressTo(100, 100, Easing.Linear);
+                lblProgress.Text =  "100 % completed.";
+
+			});
+			//RefreshCoins?.Invoke(this, new EventArgs());
+
+            
+			//cmdRestore.IsEnabled = true;
+			//  cmdImport.IsEnabled = true;
+			//  progressBar.Value = 100;
+
+		}//end detect
+		private void updateLog(String msg){
             
         }
 
@@ -49,7 +110,7 @@ namespace CloudCoin.CE.Views
 				updateLog("  Finishing importing coins from last time...");
 
 				Console.ForegroundColor = ConsoleColor.White;
-				//detect();
+				detect();
 				Console.Out.WriteLine("  Now looking in import folder for new coins...");// "Now looking in import folder for new coins...");
 				updateLog("  Now looking in import folder for new coins...");
 			} //end if there are files in the suspect folder that need to be imported
@@ -76,7 +137,7 @@ namespace CloudCoin.CE.Views
 			}
 			else
 			{
-				//detect();
+				detect();
 			}
         
 //end if coins to import
@@ -96,4 +157,11 @@ namespace CloudCoin.CE.Views
             //Console.WriteLine(fileInfo[0].FullName);
         }
     }
+	public static class MyExtensions
+	{
+		public static string ToCustomString(this TimeSpan span)
+		{
+			return string.Format("{0:00}:{1:00}:{2:00}", span.Hours, span.Minutes, span.Seconds);
+		}
+	}
 }

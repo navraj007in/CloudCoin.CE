@@ -43,6 +43,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)FileUtils.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CoreLogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Importer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Detector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Frack_Fixer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FixitHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
