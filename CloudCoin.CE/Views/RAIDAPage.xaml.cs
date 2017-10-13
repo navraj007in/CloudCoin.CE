@@ -46,7 +46,7 @@ namespace CloudCoin.CE.Views
         public bool echoRaida()
 		{
 			RAIDA_Status.resetEcho();
-			RAIDA raida1 = new RAIDA(5000);
+			RAIDA raida1 = new RAIDA();
 			Response[] results = raida1.echoAll(15000);
 			int totalReady = 0;
 			Console.Out.WriteLine("");

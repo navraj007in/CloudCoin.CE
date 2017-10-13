@@ -46,6 +46,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Detector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Frack_Fixer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FixitHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MultiDetect.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />

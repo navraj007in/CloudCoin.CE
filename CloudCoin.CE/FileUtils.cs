@@ -27,7 +27,8 @@ namespace Founders
         public String exportFolder;
         public String partialFolder;
         public String languageFolder;
-
+        internal string detectedFolder;
+        internal string receiptsFolder;
 
         public static FileUtils GetInstance(String rootFolder)
         {
@@ -43,13 +44,22 @@ namespace Founders
             String exportFolder = rootFolder + "/" + Config.exportFolder+ "/";
             String languageFolder = rootFolder + "/" + Config.languageFolder+ "/";
             String partialFolder = rootFolder + "/" + Config.partialFolder+ "/";
+            String detectedFolder = rootFolder + "/" + Config.detectedFolder + "/";
+            String recieptsFolder = rootFolder + "/" + Config.recieptsFolder + "/";
 
-        FileUtils fileUtils = new FileUtils(rootFolder, importFolder, importedFolder, trashFolder, suspectFolder, frackedFolder, bankFolder, templateFolder, counterfeitFolder, directoryFolder, exportFolder, partialFolder);
+			FileUtils fileUtils = new FileUtils(rootFolder, importFolder, importedFolder, 
+                                                trashFolder, suspectFolder, frackedFolder, 
+                                                bankFolder, templateFolder, counterfeitFolder, 
+                                                directoryFolder, exportFolder, partialFolder,detectedFolder,recieptsFolder);
 
             return fileUtils;
         }
         /* CONSTRUCTOR */
-        private FileUtils(String rootFolder, String importFolder, String importedFolder, String trashFolder, String suspectFolder, String frackedFolder, String bankFolder, String templateFolder, String counterfeitFolder, String directoryFolder, String exportFolder, String partialFolder)
+        private FileUtils(String rootFolder, String importFolder, String importedFolder, 
+                          String trashFolder, String suspectFolder, String frackedFolder, 
+                          String bankFolder, String templateFolder, String counterfeitFolder, 
+                          String directoryFolder, String exportFolder, String partialFolder,
+                         String detectedFolder,String recieptsFolder)
         {
             //  initialise instance variables
             this.rootFolder = rootFolder;
@@ -64,7 +74,9 @@ namespace Founders
             this.directoryFolder = directoryFolder;
             this.exportFolder = exportFolder;
             this.partialFolder = partialFolder;
-            
+            this.detectedFolder = detectedFolder;
+            this.receiptsFolder = recieptsFolder;
+
         }  // End constructor
 
         public void CreateDirectoryStructure() {
@@ -80,6 +92,8 @@ namespace Founders
 			Directory.CreateDirectory(directoryFolder);
 			Directory.CreateDirectory(exportFolder);
 			Directory.CreateDirectory(partialFolder);
+            Directory.CreateDirectory(detectedFolder);
+            Directory.CreateDirectory(receiptsFolder);
         }
         /* PUBLIC METHODS */
  

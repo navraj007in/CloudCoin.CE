@@ -23,7 +23,7 @@ namespace CloudCoin.CE
             else
                 MainPage = new NavigationPage(new MainPage());
 
-            Xamarin.FormsMaps.Init();
+           // Xamarin.FormsMaps.Init();
         }
     }
 }

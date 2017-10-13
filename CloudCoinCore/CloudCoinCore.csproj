@@ -39,6 +39,9 @@
     <Compile Include="DetectionAgent.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="ProgressEventArgs.cs" />
+    <Compile Include="Receipt.cs" />
+    <Compile Include="ReceitDetail.cs" />
+    <Compile Include="CoreLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">

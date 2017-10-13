@@ -20,7 +20,7 @@ namespace Founders
 		{
 
 			this.fileUtils = fileUtils;
-			raida = new RAIDA(timeout);
+			raida = new RAIDA();
 			totalValueToBank = 0;
 			totalValueToCounterfeit = 0;
 			totalValueToFractured = 0;
@@ -93,7 +93,7 @@ namespace Founders
 					if (RAIDA_Status.hasTicket[trustedTriad[0]] && RAIDA_Status.hasTicket[trustedTriad[1]] && RAIDA_Status.hasTicket[trustedTriad[2]])
 					{
 						/*5.T YES, so REQUEST FIX*/
-						DetectionAgent da = new DetectionAgent(raida_ID, 5000);
+						DetectionAgent da = new DetectionAgent(raida_ID);
 						Response fixResponse = da.fix(trustedTriad, RAIDA_Status.tickets[trustedTriad[0]], RAIDA_Status.tickets[trustedTriad[1]], RAIDA_Status.tickets[trustedTriad[2]], cc.an[raida_ID]).Result;
 						/*6. DID THE FIX WORK?*/
 						if (fixResponse.success)

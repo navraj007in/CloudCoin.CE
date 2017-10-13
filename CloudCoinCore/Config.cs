@@ -19,8 +19,11 @@ namespace CloudCoinCore
 		public static String exportFolder = "Export" ;
 		public static String languageFolder = "Language" ;
 		public static String partialFolder = "Partial" ;
+		public static String detectedFolder = "Detected";
+		public static String recieptsFolder = "Reciepts";
 
-        public static String WorkSpaceKey = "workspace";
+
+		public static String WorkSpaceKey = "workspace";
         public static String DisclaimerKey = "isDisclaimerShown";
         public Config()
         {

@@ -11,6 +11,7 @@
         
                 </StackLayout>
                 <Label x:Name="lblProgressMessage" ></Label>
+                        <Label x:Name="lblProgressMessage2" Text="Second"></Label>
         
                 </StackLayout>
             <StackLayout Orientation="Horizontal" AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1" AbsoluteLayout.LayoutFlags="PositionProportional">
@@ -21,8 +22,9 @@
                 TextColor = "White" 
                 x:Name="cmdExport" Clicked="HandleExport_Clicked" WidthRequest="100"></Button>
 
-
+        
             </StackLayout>
+            
         </AbsoluteLayout>
 	</ContentPage.Content>
 </ContentPage>
