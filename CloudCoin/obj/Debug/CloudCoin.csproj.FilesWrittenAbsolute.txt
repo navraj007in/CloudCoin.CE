@@ -1,0 +1,12 @@
+/Users/srajan/Projects/CloudCoin/CloudCoin/obj/Debug/.NETPortable,Version=v4.5,Profile=Profile111.AssemblyAttribute.cs
+/Users/srajan/Projects/CloudCoin/CloudCoin/obj/Debug/CloudCoin.App.xaml
+/Users/srajan/Projects/CloudCoin/CloudCoin/obj/Debug/CloudCoin.CloudCoinPage.xaml
+/Users/srajan/Projects/CloudCoin/CloudCoin/obj/Debug/CloudCoin.App.xaml.g.cs
+/Users/srajan/Projects/CloudCoin/CloudCoin/obj/Debug/CloudCoin.CloudCoinPage.xaml.g.cs
+/Users/srajan/Projects/CloudCoin/CloudCoin/bin/Debug/CloudCoin.pdb
+/Users/srajan/Projects/CloudCoin/CloudCoin/bin/Debug/CloudCoin.dll
+/Users/srajan/Projects/CloudCoin/CloudCoin/obj/Debug/CloudCoin.dll
+/Users/srajan/Projects/CloudCoin/CloudCoin/obj/Debug/CloudCoin.pdb
+/Users/srajan/Projects/CloudCoin/CloudCoin/bin/Debug/Xamarin.Forms.Core.dll
+/Users/srajan/Projects/CloudCoin/CloudCoin/bin/Debug/Xamarin.Forms.Platform.dll
+/Users/srajan/Projects/CloudCoin/CloudCoin/bin/Debug/Xamarin.Forms.Xaml.dll

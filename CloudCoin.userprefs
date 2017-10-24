@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{B38FE7E1-E40E-4A37-A009-0C0550A09308}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin/CloudCoinPage.xaml.cs">
+    <Files>
+      <File FileName="CloudCoin/CloudCoinPage.xaml" Line="390" Column="1" />
+      <File FileName="CloudCoin/CloudCoinPage.xaml.cs" Line="32" Column="4" />
+      <File FileName="CloudCoin/obj/Debug/CloudCoin.CloudCoinPage.xaml.g.cs" Line="58" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CloudCoin.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4CE1E3E-6989-4B4B-95D9-60F89A505AC3" />
+  <MultiItemStartupConfigurations />
+</Properties>
