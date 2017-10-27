@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CloudCoin.CE.CloudCoinPage" BackgroundColor="#348EFB">
+	<AbsoluteLayout Margin="0,24,0,0">
+            
+            <Image Source="logo" AbsoluteLayout.LayoutBounds=".5,6,119,18"
+                AbsoluteLayout.LayoutFlags="XProportional" />
+            <AbsoluteLayout Margin="0,0,20,0" AbsoluteLayout.LayoutBounds="1,0,80,30"
+                AbsoluteLayout.LayoutFlags="PositionProportional">
+                <Button Image="questionmark.png" AbsoluteLayout.LayoutBounds="0,0,30,30"
+                AbsoluteLayout.LayoutFlags="None" Margin="0,0,0,0" Clicked="OnClickHelp"/>
+                <Button Image="settings.png" AbsoluteLayout.LayoutBounds="30,0,30,30"
+                AbsoluteLayout.LayoutFlags="None" Margin="0,0,0,0"/>
+            </AbsoluteLayout>
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All" Margin = "20,76,20,45">
+             <Image Source="backicons.png" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"/>
+            </AbsoluteLayout>
+
+            <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All" Margin = "60,60,60,70">
+                <Frame x:Name="FrameImpoart" BackgroundColor = "White" AbsoluteLayout.LayoutBounds="0,0,1,0.3"
+                AbsoluteLayout.LayoutFlags="All"  HasShadow="false" >
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedImport"/>
+                    </Frame.GestureRecognizers>
+                    <AbsoluteLayout>
+                    <Image Source="importbtn.png" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                       AbsoluteLayout.LayoutFlags="SizeProportional" HorizontalOptions = "FillAndExpand"  Aspect = "AspectFit" Margin ="-10,-30,-10,0"/>
+                    </AbsoluteLayout>
+                </Frame>
+                <Frame x:Name="FrameSafe" BackgroundColor = "White" AbsoluteLayout.LayoutBounds="0,0.5,1,0.3"
+                AbsoluteLayout.LayoutFlags="All"  HasShadow="false" >
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedSafe"/>
+                    </Frame.GestureRecognizers>
+                    <AbsoluteLayout>
+                        <Image Source="safebtn.png" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                            AbsoluteLayout.LayoutFlags="SizeProportional" HorizontalOptions = "FillAndExpand"  Aspect = "AspectFit" Margin ="-10,-30,-10,0"/>
+                    </AbsoluteLayout>
+                </Frame>
+             <Frame x:Name="FrameExpoart" BackgroundColor = "White" AbsoluteLayout.LayoutBounds="0,1,1,0.3"
+                AbsoluteLayout.LayoutFlags="All"  HasShadow="false" >
+                <Frame.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedExport"/>
+    </Frame.GestureRecognizers>
+                    <AbsoluteLayout>
+                    <Image Source="exportbtn.png" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="SizeProportional" HorizontalOptions = "FillAndExpand"  Aspect = "AspectFit" Margin ="-10,-30,-10,0"/>
+                    </AbsoluteLayout>
+                </Frame>
+
+            </AbsoluteLayout>
+
+        
+        <AbsoluteLayout  Margin="0,0,0,10" AbsoluteLayout.LayoutBounds="0.5,1,250,50"
+                AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Label Text="CloudCoinConsortium.com" TextColor = "White" FontSize = "12" HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutBounds="0,0,250,20"
+                AbsoluteLayout.LayoutFlags="None"/>
+            <Label Text="1.0" TextColor = "White" FontSize = "12" HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutBounds="0,20,250,20"
+                AbsoluteLayout.LayoutFlags="None"/>
+                
+            </AbsoluteLayout>
+
+
+
+        <Frame x:Name="FrameBackground" BackgroundColor = "Black" Opacity="0.42" AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"  HasShadow="false" IsVisible="false" CornerRadius="0">
+        </Frame>
+             <Frame x:Name="FrameImportAction" BackgroundColor = "Transparent"  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"  HasShadow="false" IsVisible="false" IsClippedToBounds = "true">
+                    <AbsoluteLayout>
+                <Frame BackgroundColor = "White" HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0.5,0.5,0.9,0.3"
+                AbsoluteLayout.LayoutFlags="All" CornerRadius="0">
+                    <AbsoluteLayout>
+
+                    <Label  TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0,1,0.3" Text = "Import Coins" VerticalTextAlignment = "Center" FontSize = "19" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" Margin="0,10,0,0"/>
+                         
+                        <Label  TextColor ="#7A8694"  AbsoluteLayout.LayoutBounds= "0,0.4,1,0.5" Text = "You have 10 files in your import directory" VerticalTextAlignment = "Center"
+                HorizontalTextAlignment ="Center" FontSize = "13"
+                AbsoluteLayout.LayoutFlags="All" Margin="5,0,5,0" />
+                        
+                        <Image BackgroundColor ="#348EFB" AbsoluteLayout.LayoutBounds="0,0.7,1,0.005" AbsoluteLayout.LayoutFlags="All" />
+                        <Label TextColor= "#7A8694" AbsoluteLayout.LayoutBounds="0,1,0.5,0.3" Text = "Cancel" VerticalTextAlignment = "Center"
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" >
+                            <Frame.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedCancel"/>
+    </Frame.GestureRecognizers>
+                            </Label>
+                         
+                        <Label BackgroundColor = "#348EFB" TextColor ="White"  AbsoluteLayout.LayoutBounds= "1,1,0.5,0.3" Text = "Import" VerticalTextAlignment = "Center"
+                HorizontalTextAlignment ="Center"
+                AbsoluteLayout.LayoutFlags="All" >
+                            <Frame.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedImportAction"/>
+    </Frame.GestureRecognizers>
+                        </Label>
+                    </AbsoluteLayout>
+                    
+                </Frame>
+
+                    </AbsoluteLayout>
+                </Frame>
+
+
+
+                 <Frame x:Name="FrameSafeAction" BackgroundColor = "Transparent"  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"  HasShadow="false"  IsClippedToBounds = "true" IsVisible="false">
+                    <AbsoluteLayout>
+                <Frame BackgroundColor = "White" HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0.5,0.5,0.9,0.7"
+                AbsoluteLayout.LayoutFlags="All" CornerRadius="5">
+                    <AbsoluteLayout>
+
+                    <Label  TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0,1,0.1" Text = "Safe Inventory" VerticalTextAlignment = "Center" FontSize = "19" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" Margin="0,10,0,0"/>
+                         
+
+                         <Frame  HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0,.22,1,.36"
+                AbsoluteLayout.LayoutFlags="All" CornerRadius="0">
+                            <AbsoluteLayout>
+                                <Label  TextColor= "#007AFF" AbsoluteLayout.LayoutBounds="0,0,1,0.2" Text = "1390" VerticalTextAlignment = "Center" FontSize = "19" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
+                                <Label TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0.35,1,0.1" Text = "Authentic CloudCoins" VerticalTextAlignment = "Center" FontSize = "13" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
+                                <StackLayout   AbsoluteLayout.LayoutBounds="0,0.9,1,0.5"  AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal">
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "1s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "5s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "25s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "100s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "250s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+                                <Image BackgroundColor ="#348EFB" AbsoluteLayout.LayoutBounds="0,0.94,1,0.005" AbsoluteLayout.LayoutFlags="All" />
+                            </AbsoluteLayout>
+                            
+                            </Frame>
+                    
+                                <Frame HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0,.75,1,.36"
+                AbsoluteLayout.LayoutFlags="All" CornerRadius="0">
+                    
+                        <AbsoluteLayout>
+                                
+                                <Label TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0.1,1,0.1" Text = "Fracked" VerticalTextAlignment = "Center" FontSize = "13" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
+                                <StackLayout   AbsoluteLayout.LayoutBounds="0,0.45,1,0.5"  AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal">
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "1s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "5s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "25s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "100s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#383F44" Text = "250s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
+                                    </StackLayout>
+
+                                </StackLayout>
+                                <Label BackgroundColor="Black" Opacity=".42" TextColor= "White" AbsoluteLayout.LayoutBounds="0.5,1,0.8,0.25" Text = "Fix Fracked" VerticalTextAlignment = "Center"
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" IsVisible="false">
+                            <Frame.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedCancel"/>
+    </Frame.GestureRecognizers>
+                            </Label>
+                                <Image BackgroundColor ="#348EFB" AbsoluteLayout.LayoutBounds="0,1,1,0.005" AbsoluteLayout.LayoutFlags="All" />
+                            </AbsoluteLayout>
+
+                                </Frame>
+                        <Label TextColor= "#7A8694" AbsoluteLayout.LayoutBounds="0,1,1,0.15" Text = "Close" VerticalTextAlignment = "Center"
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" >
+                            <Label.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedCancel"/>
+    </Label.GestureRecognizers>
+                            </Label>
+                         
+                        
+                    </AbsoluteLayout>
+                    
+                </Frame>
+
+                    </AbsoluteLayout>
+                </Frame>
+
+
+
+         <Frame x:Name="FrameExportAction" BackgroundColor = "Transparent"  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"  HasShadow="false" IsVisible = "false"  IsClippedToBounds = "true">
+                    <AbsoluteLayout>
+                <Frame BackgroundColor = "White" HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0.5,0.5,0.9,0.8"
+                AbsoluteLayout.LayoutFlags="All" CornerRadius="0">
+                    <AbsoluteLayout>
+
+                    <Label  TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0,1,0.1" Text = "Export Coins" VerticalTextAlignment = "Center" FontSize = "19" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" Margin="0,10,0,0"/>
+                         <Label  TextColor= "#007AFF" AbsoluteLayout.LayoutBounds="0,0.1,1,0.1" Text = "1390" VerticalTextAlignment = "Center" FontSize = "19" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
+                         <Label TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0.18,1,0.06" Text = "Total Coins in Safe" VerticalTextAlignment = "Center" FontSize = "13" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
+
+                        <Frame x:Name="ButtonJPGFrame" BackgroundColor = "#007AFF" HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0.3,0.26,0.29,0.06"
+                AbsoluteLayout.LayoutFlags="All" CornerRadius="0">
+                        
+                <Label x:Name="ButtonJPG" TextColor= "White"  Text = ".jpg" VerticalTextAlignment = "Center" FontSize = "13" 
+                HorizontalTextAlignment ="Center" >
+                            <Label.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedJPGStack"/>
+    </Label.GestureRecognizers>
+                                </Label>
+                            </Frame>
+                        <Frame x:Name="ButtonStackFrame" BackgroundColor="White"  HasShadow ="false" Padding="0,0,0,0"  AbsoluteLayout.LayoutBounds="0.7,0.26,0.29,0.06"
+                AbsoluteLayout.LayoutFlags="All" CornerRadius="0" OutlineColor="#007AFF">
+                        <Label x:Name="ButtonStack" TextColor= "#383F44" Text = ".stack" VerticalTextAlignment = "Center" FontSize = "13" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All">
+                <Label.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedJPGStack"/>
+    </Label.GestureRecognizers>
+                                </Label>
+                        </Frame>
+
+
+
+                        <StackLayout  AbsoluteLayout.LayoutBounds="0,0.5,1,0.4"  AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" Margin ="5,0,5,0">
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "1s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+                                        <Picker >
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                  <x:String>10</x:String>
+                                                  <x:String>20</x:String>
+                                                  <x:String>30</x:String>
+                                                </x:Array>
+                                              </Picker.ItemsSource>
+                                    </Picker>
+                                        <Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "5s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand"/>
+                                <Picker >
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                  <x:String>10</x:String>
+                                                  <x:String>20</x:String>
+                                                  <x:String>30</x:String>
+                                                </x:Array>
+                                              </Picker.ItemsSource>
+                                    </Picker>
+                                        <Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "25s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+                                        <Picker >
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                  <x:String>10</x:String>
+                                                  <x:String>20</x:String>
+                                                  <x:String>30</x:String>
+                                                </x:Array>
+                                              </Picker.ItemsSource>
+                                    </Picker>
+                                <Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "100s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+                                        <Picker >
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                  <x:String>10</x:String>
+                                                  <x:String>20</x:String>
+                                                  <x:String>30</x:String>
+                                                </x:Array>
+                                              </Picker.ItemsSource>
+                                    </Picker>
+                                <Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions = "FillAndExpand">
+                                        <Label TextColor= "#007AFF" Text = "250s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+
+                                <Picker >
+                                            <Picker.ItemsSource>
+                                                <x:Array Type="{x:Type x:String}">
+                                                  <x:String>10</x:String>
+                                                  <x:String>20</x:String>
+                                                  <x:String>30</x:String>
+                                                </x:Array>
+                                              </Picker.ItemsSource>
+                                    </Picker><Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+                                    </StackLayout>
+
+                                </StackLayout>
+
+                        
+                        <Label  TextColor= "#7A8694" AbsoluteLayout.LayoutBounds="0,0.73,1,0.1" Text = "Export Tag" VerticalTextAlignment = "Center" FontSize = "19" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
+                        <Entry TextColor ="#007AFF" HorizontalTextAlignment = "Center" Placeholder="Optional" AbsoluteLayout.LayoutBounds="0.5,0.85,0.8,0.1" AbsoluteLayout.LayoutFlags="All" />
+
+                        
+
+                        <Image BackgroundColor ="#348EFB" AbsoluteLayout.LayoutBounds="0,0.9,1,0.002" AbsoluteLayout.LayoutFlags="All" />
+                        <Label TextColor= "#7A8694" AbsoluteLayout.LayoutBounds="0,1,0.5,0.1" Text = "Cancel" VerticalTextAlignment = "Center"
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" >
+                            <Frame.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedCancel"/>
+    </Frame.GestureRecognizers>
+                            </Label>
+                         
+                        <Label BackgroundColor = "#348EFB" TextColor ="White"  AbsoluteLayout.LayoutBounds= "1,1,0.5,0.1" Text = "Export 0" VerticalTextAlignment = "Center"
+                HorizontalTextAlignment ="Center"
+                AbsoluteLayout.LayoutFlags="All" >
+                            <Frame.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedExportAction"/>
+    </Frame.GestureRecognizers>
+                        </Label>
+                         
+                        
+                    </AbsoluteLayout>
+                    
+                </Frame>
+
+                    </AbsoluteLayout>
+                </Frame>
+
+
+
+
+
+                <Frame x:Name="FrameHelpAction" BackgroundColor = "Transparent"  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"  HasShadow="false"  IsClippedToBounds = "true" IsVisible = "false">
+                    <AbsoluteLayout>
+                <Frame BackgroundColor = "White" HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0.5,0.5,0.9,0.7"
+                AbsoluteLayout.LayoutFlags="All" CornerRadius="5">
+                    <AbsoluteLayout>
+
+                    <Label  TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0,1,0.1" Text = "About Scan and Safe" VerticalTextAlignment = "Center" FontSize = "19" 
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" Margin="0,10,0,0"/>
+                         
+                         <Editor x:Name = "HelpEditor" AbsoluteLayout.LayoutBounds="0.5,0.5,0.9,0.8" AbsoluteLayout.LayoutFlags="All" Text = "In traditional monetary systems, the people who have the money own it. With CloudCoins, the people that know the money own it.
+To own your CloudCoins you must pawn them by changing all internal authenticity numbers so that only you have those numbers. CloudCoins use a new technology called RAIDA that does what Bitcoin's Blockchain does, only better. In order to change your CloudCoin’s internal numbers, the app must communicate with the RAIDA servers. A stable internet connection is required and the Scan and Safe app must not be blocked by your anti-virus software.When you receive the CloudCoins via e-mail or Airdrop, choose the Scan and Safe app icon to store them within the app. Next, tap on the Import icon, and the software will search for any CloudCoins you have imported. The app will give you an option to either pawn the CloudCoins or simply scan them without changing the authenticity numbers. During the pawing process, the app will send 25 embedded authenticity numbers corresponding to each CloudCoin directly to 25 RAIDA cloud servers simultaneously. This process takes about 2 to 5 seconds per CloudCoin note. In the event that you verify a CloudCoin stack file, the verification process will be much faster for every particular note. If your CloudCoin is authentic, it will be yours to use and keep. The Scan and Safe app will encrypt and store it on your iPhone. If your CloudCoin is counterfeit, you will be notified, and it will be moved into the Trash folder.
+To give a CloudCoin to someone else, you will need to export it. The CloudCoin will be decrypted and you will be able to send it by e-mail or any other method. Note that sending a CloudCoin by e-mail is not safe and it could possibly be stolen in transit, therefore, it is better to store it in a password-protected archive.
+If you accidentally destroy or lose your CloudCoins, they can be recovered within 2 years. Send your CloudCoin’s serial number and the month it was lost to CloudCoins@protonmail.com with Subject: Lost Coin Report.
+Please, let us know if you have any questions or concerns.
+Scan and Safe Support: gitinsky@protonmail.com" FontSize="12"  />
+
+                        <Label TextColor= "#7A8694" AbsoluteLayout.LayoutBounds="0,1,1,0.1" Text = "Close" VerticalTextAlignment = "Center"
+                HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" >
+                            <Label.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTappedCancel"/>
+    </Label.GestureRecognizers>
+                            </Label>
+                         
+                        
+                    </AbsoluteLayout>
+                    
+                </Frame>
+
+                    </AbsoluteLayout>
+                </Frame>
+
+
+        </AbsoluteLayout>
+
+    
+</ContentPage>
