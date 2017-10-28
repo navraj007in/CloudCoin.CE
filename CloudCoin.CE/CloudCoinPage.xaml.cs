@@ -22,6 +22,26 @@ namespace CloudCoin.CE
             Task.Run(() => {
                 echoRaida();
             });
+
+            //var directories = Directory.EnumerateDirectories("./");
+            Directory.CreateDirectory("./CloudCoin");
+            var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            Console.WriteLine(("Folder Path- "+documents));
+            Directory.CreateDirectory(documents + "/Bank");
+            Directory.CreateDirectory(documents + "/Import");
+            Directory.CreateDirectory(documents + "/Counterfeit");
+            Directory.CreateDirectory(documents + "/Export");
+            Directory.CreateDirectory(documents + "/Templates");
+            Directory.CreateDirectory(documents + "/Suspect");
+
+            var directories = Directory.EnumerateDirectories(documents );
+
+            //Directory.CreateDirectory("./cBank");
+
+            foreach (var directory in directories)
+            {
+                Console.WriteLine(directory);
+            }
         }
 
         public void multi_detect()
