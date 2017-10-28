@@ -28,7 +28,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>Visual Studio: CloudCoinCE Development</CodesignProvision>
+    <CodesignProvision>CloudCoinCEiOS1</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
@@ -43,7 +43,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
-    <CodesignProvision>Visual Studio: CloudCoinCE Development</CodesignProvision>
+    <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -70,7 +70,7 @@
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFastDev>false</MtouchFastDev>
     <MtouchFloat32>true</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <IOSDebuggerPort>34148</IOSDebuggerPort>
@@ -78,6 +78,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
+    <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -221,6 +222,13 @@
     <Folder Include="CloudCoin\Suspect\" />
     <Folder Include="CloudCoin\Fracked\" />
     <Folder Include="CloudCoin\Import\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\shareExtension\shareExtension.csproj">
+      <IsAppExtension>true</IsAppExtension>
+      <Project>{0E040C96-728D-45CB-AAA9-3DF48B7FD145}</Project>
+      <Name>shareExtension</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="..\CloudCoin.CE\CloudCoin.CE.projitems" Label="Shared" Condition="Exists('..\CloudCoin.CE\CloudCoin.CE.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

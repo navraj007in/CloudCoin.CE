@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoinCE", "iOS\CloudCoi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoin.CE.Droid", "Droid\CloudCoin.CE.Droid.csproj", "{B2417C84-E981-4734-9936-B92B2A51F84F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shareExtension", "shareExtension\shareExtension.csproj", "{0E040C96-728D-45CB-AAA9-3DF48B7FD145}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -41,5 +43,17 @@ Global
 		{B2417C84-E981-4734-9936-B92B2A51F84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2417C84-E981-4734-9936-B92B2A51F84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2417C84-E981-4734-9936-B92B2A51F84F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Release|iPhone.Build.0 = Release|iPhone
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Release|Any CPU.ActiveCfg = Release|iPhone
+		{0E040C96-728D-45CB-AAA9-3DF48B7FD145}.Release|Any CPU.Build.0 = Release|iPhone
 	EndGlobalSection
 EndGlobal

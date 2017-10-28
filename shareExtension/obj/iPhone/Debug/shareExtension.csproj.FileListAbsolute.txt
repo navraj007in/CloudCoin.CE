@@ -1,0 +1,9 @@
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/bin/iPhone/Debug/shareExtension.dll
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/bin/iPhone/Debug/shareExtension.pdb
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/ibtool/_BundleResourceWithLogicalName.items
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/actool/_PartialAppManifest.items
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/actool/_BundleResourceWithLogicalName.items
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/optimized/
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/shareExtension.csproj.CoreCompileInputs.cache
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/shareExtension.dll
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/shareExtension.pdb

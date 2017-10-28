@@ -83,21 +83,27 @@ namespace Founders
         }  // End constructor
 
         public void CreateDirectoryStructure() {
-			Directory.CreateDirectory(importFolder);
-			Directory.CreateDirectory(importedFolder);
-			Directory.CreateDirectory(trashFolder);
-			Directory.CreateDirectory(suspectFolder);
-			Directory.CreateDirectory(frackedFolder);
-			Directory.CreateDirectory(bankFolder);
+            try
+            {
+                Directory.CreateDirectory(importFolder);
+                Directory.CreateDirectory(importedFolder);
+                Directory.CreateDirectory(trashFolder);
+                Directory.CreateDirectory(suspectFolder);
+                Directory.CreateDirectory(frackedFolder);
+                Directory.CreateDirectory(bankFolder);
 
-			Directory.CreateDirectory(templateFolder);
-			Directory.CreateDirectory(counterfeitFolder);
-			Directory.CreateDirectory(directoryFolder);
-			Directory.CreateDirectory(exportFolder);
-			Directory.CreateDirectory(partialFolder);
-            Directory.CreateDirectory(detectedFolder);
-            Directory.CreateDirectory(receiptsFolder);
-            Directory.CreateDirectory(lostFolder);
+                Directory.CreateDirectory(templateFolder);
+                Directory.CreateDirectory(counterfeitFolder);
+                Directory.CreateDirectory(directoryFolder);
+                Directory.CreateDirectory(exportFolder);
+                Directory.CreateDirectory(partialFolder);
+                Directory.CreateDirectory(detectedFolder);
+                Directory.CreateDirectory(receiptsFolder);
+                Directory.CreateDirectory(lostFolder);
+            }
+            catch(Exception e){
+                Console.WriteLine(e.Message);
+            }
 
         }
         /* PUBLIC METHODS */
