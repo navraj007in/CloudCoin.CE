@@ -201,14 +201,13 @@ namespace CloudCoin.CE
                 after = DateTime.Now;
                 ts = after.Subtract(before);//end the timer
 
-                grade();
+                //grade();
                 // Console.Out.WriteLine("  GRADING DONE NOW SHOWING. Do you wnat to show");// "No coins in import folder.");
                 // Console.In.ReadLine();
                 Console.Out.WriteLine("Time in ms to multi detect pown " + ts.TotalMilliseconds);
                 RAIDA_Status.showMultiMs();
                 showCoins();
-                // multi_detect();
-                //detect(1);
+        
             }//end if coins to import
         }   // end import
 
@@ -241,9 +240,11 @@ namespace CloudCoin.CE
             Console.Out.WriteLine("");
             // This is for consol apps.
             Banker bank = new Banker(fileUtils);
-            bankTotals = bank.countCoins(fileUtils.bankFolder);
+            bankTotals = bank.countCoins(fileUtils.counterfeitFolder);
             frackedTotals = bank.countCoins(fileUtils.frackedFolder);
             partialTotals = bank.countCoins(fileUtils.partialFolder);
+
+
             // int[] counterfeitTotals = bank.countCoins( counterfeitFolder );
 
             //setLabelText(lblOnesCount, Convert.ToString(bankTotals[1] + frackedTotals[1] + partialTotals[1]));
@@ -251,6 +252,7 @@ namespace CloudCoin.CE
             //setLabelText(lblQtrCount, Convert.ToString(bankTotals[3] + frackedTotals[3] + partialTotals[3]));
             //setLabelText(lblHundredCount, Convert.ToString(bankTotals[4] + frackedTotals[4] + partialTotals[4]));
             //setLabelText(lblTwoFiftiesCount, Convert.ToString(bankTotals[5] + frackedTotals[5] + partialTotals[5]));
+
 
             //setLabelText(lblOnesValue, Convert.ToString(bankTotals[1] + frackedTotals[1] + partialTotals[1]));
             //setLabelText(lblFivesValue, Convert.ToString((bankTotals[2] + frackedTotals[2] + partialTotals[2]) * 5));
@@ -313,6 +315,7 @@ namespace CloudCoin.CE
             stopwatch.Stop();
             Console.Out.WriteLine(stopwatch.Elapsed + " ms");
             updateLog("Time to import " + detectionResults[0] + " Coins: " + stopwatch.Elapsed.ToCustomString() + "");
+            Console.WriteLine("100 % completed");
 
             Device.BeginInvokeOnMainThread(() => {
                 Console.WriteLine("100 % completed");
@@ -456,6 +459,30 @@ namespace CloudCoin.CE
         }
         void OnTappedImport(object sender, EventArgs e)
         {
+            int totalRAIDABad = 0;
+            for (int i = 0; i < 25; i++)
+            {
+                if (RAIDA_Status.failsEcho[i])
+                {
+                    totalRAIDABad += 1;
+                }
+            }
+            if (totalRAIDABad > 8)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Out.WriteLine("You do not have enough RAIDA to perform an import operation.");
+                Console.Out.WriteLine("Check to make sure your internet is working.");
+                Console.Out.WriteLine("Make sure no routers at your work are blocking access to the RAIDA.");
+                Console.Out.WriteLine("Try to Echo RAIDA and see if the status has changed.");
+                Console.ForegroundColor = ConsoleColor.White;
+
+              
+                return;
+            }
+            //cmdImport.IsEnabled = false;
+            //cmdRestore.IsEnabled = false;
+            //progressBar.Visibility = Visibility.Visible;
+
             Task.Run(() => { 
                 import();
             }); 

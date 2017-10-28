@@ -112,36 +112,37 @@
                 AbsoluteLayout.LayoutFlags="All" CornerRadius="5">
                     <AbsoluteLayout>
 
-                    <Label  TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0,1,0.1" Text = "Safe Inventory" VerticalTextAlignment = "Center" FontSize = "19" 
+                    <Label  TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0,1,0.1" Text = "Safe Inventory"
+                            x:Name="lblSafeInventory" VerticalTextAlignment = "Center" FontSize = "19" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" Margin="0,10,0,0"/>
                          
 
                          <Frame  HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0,.22,1,.36"
                 AbsoluteLayout.LayoutFlags="All" CornerRadius="0">
                             <AbsoluteLayout>
-                                <Label  TextColor= "#007AFF" AbsoluteLayout.LayoutBounds="0,0,1,0.2" Text = "1390" VerticalTextAlignment = "Center" FontSize = "19" 
+                                <Label  TextColor= "#007AFF" AbsoluteLayout.LayoutBounds="0,0,1,0.2" Text = "1390" x:Name="lblBankTotal" VerticalTextAlignment = "Center" FontSize = "19" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
                                 <Label TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0.35,1,0.1" Text = "Authentic CloudCoins" VerticalTextAlignment = "Center" FontSize = "13" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
                                 <StackLayout   AbsoluteLayout.LayoutBounds="0,0.9,1,0.5"  AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal">
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblOneCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "1s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblFiveCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "5s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblQtrCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "25s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblHundredCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "100s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblTwoFiftyCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "250s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
 
@@ -154,7 +155,7 @@
                                 <Frame HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0,.75,1,.36"
                 AbsoluteLayout.LayoutFlags="All" CornerRadius="0">
                     
-                        <AbsoluteLayout>
+                        <AbsoluteLayout IsVisible="false">
                                 
                                 <Label TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0.1,1,0.1" Text = "Fracked" VerticalTextAlignment = "Center" FontSize = "13" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>

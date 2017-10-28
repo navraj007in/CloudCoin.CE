@@ -62,7 +62,8 @@ namespace Founders
 
 
                 //DUPLICATES HAVE BEEN DELETED, NOW DETECT
-                suspectFileNames = new DirectoryInfo(this.fileUtils.suspectFolder).GetFiles().Select(o => o.Name).ToArray();//Get all files in suspect folder
+                suspectFileNames = new DirectoryInfo(this.fileUtils.suspectFolder).
+                                                                                  GetFiles().Select(o => o.Name).ToArray();//Get all files in suspect folder
 
 
                 //HOW MANY COINS WILL WE DETECT? LIMIT IT TO 200
@@ -92,7 +93,10 @@ namespace Founders
                         cloudCoin[i] = this.fileUtils.loadOneCloudCoinFromJsonFile(this.fileUtils.suspectFolder + suspectFileNames[i]);
                         cu[i] = new CoinUtils(cloudCoin[i]);
 
-                        Console.Out.WriteLine("  Now scanning coin " + (i + 1) + " of " + suspectFileNames.Length + " for counterfeit. SN " + string.Format("{0:n0}", cloudCoin[i].sn) + ", Denomination: " + cu[i].getDenomination());
+                        Console.Out.WriteLine("  Now scanning coin " + (i + 1) + " of " + suspectFileNames.Length + 
+                                              " for counterfeit. SN " + string.Format("{0:n0}", 
+                                                                                      cloudCoin[i].sn) + ", Denomination: " + 
+                                              cu[i].getDenomination());
 
                         //CoreLogger.Log("  Now scanning coin " + (i + 1) + " of " + suspectFileNames.Length + " for counterfeit. SN " + string.Format("{0:n0}", cloudCoin[i].sn) + ", Denomination: " + cu[i].getDenomination());
 
@@ -152,9 +156,10 @@ namespace Founders
                     File.Delete(fileUtils.suspectFolder + suspectFileNames[c]);//Delete the coin out of the suspect folder
                 }
 
-
+                //Console.WriteLine("Total Imported Coins - " + totalImported);
+                //Console.WriteLine("Total Counterfeit detected - " + counterfeitCoins.ToArray().Length);
                 updateLog("Total Imported Coins - " + totalImported);
-                updateLog("Total Counterfeir detected - " + counterfeitCoins.ToArray().Length);
+                updateLog("Total Counterfeit detected - " + counterfeitCoins.ToArray().Length);
 
             }//end while still have suspect
             return coinNames;
@@ -162,6 +167,8 @@ namespace Founders
 
         private void updateLog(string logLine)
         {
+            if(logLine.Length>0)
+                Console.WriteLine(logLine);
           //  App.Current.Dispatcher.Invoke(delegate
             //{
             //    txtLogs.AppendText(logLine + Environment.NewLine);
