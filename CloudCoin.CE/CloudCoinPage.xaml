@@ -120,29 +120,29 @@
                          <Frame  HasShadow ="false" Padding="0,0,0,0" AbsoluteLayout.LayoutBounds="0,.22,1,.36"
                 AbsoluteLayout.LayoutFlags="All" CornerRadius="0">
                             <AbsoluteLayout>
-                                <Label  TextColor= "#007AFF" AbsoluteLayout.LayoutBounds="0,0,1,0.2" Text = "1390" x:Name="lblBankTotal" VerticalTextAlignment = "Center" FontSize = "19" 
+                                <Label  TextColor= "#007AFF" AbsoluteLayout.LayoutBounds="0,0,1,0.2" Text = "0" x:Name="lblBankTotal" VerticalTextAlignment = "Center" FontSize = "19" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
                                 <Label TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0.35,1,0.1" Text = "Authentic CloudCoins" VerticalTextAlignment = "Center" FontSize = "13" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
                                 <StackLayout   AbsoluteLayout.LayoutBounds="0,0.9,1,0.5"  AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal">
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblOneCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "0" x:Name="lblOneCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "1s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblFiveCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "0" x:Name="lblFiveCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "5s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblQtrCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "0" x:Name="lblQtrCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "25s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblHundredCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "0" x:Name="lblHundredCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "100s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
-                                        <Label TextColor= "#007AFF" Text = "10" x:Name="lblTwoFiftyCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
+                                        <Label TextColor= "#007AFF" Text = "0" x:Name="lblTwoFiftyCount" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,10,0,0"/>
                                         <Label TextColor= "#383F44" Text = "250s" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" Margin = "0,0,0,20"/>
                                     </StackLayout>
 
@@ -218,7 +218,7 @@
 
                     <Label  TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0,1,0.1" Text = "Export Coins" VerticalTextAlignment = "Center" FontSize = "19" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" Margin="0,10,0,0"/>
-                         <Label  TextColor= "#007AFF" AbsoluteLayout.LayoutBounds="0,0.1,1,0.1" Text = "1390" VerticalTextAlignment = "Center" FontSize = "19" 
+                         <Label  TextColor= "#007AFF" AbsoluteLayout.LayoutBounds="0,0.1,1,0.1" Text = "25" x:Name="lblExportTotal" VerticalTextAlignment = "Center" FontSize = "19" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
                          <Label TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0.18,1,0.06" Text = "Total Coins in Safe" VerticalTextAlignment = "Center" FontSize = "13" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
@@ -248,68 +248,38 @@
                         <StackLayout  AbsoluteLayout.LayoutBounds="0,0.5,1,0.4"  AbsoluteLayout.LayoutFlags="All" Orientation="Horizontal" Margin ="5,0,5,0">
                                     <StackLayout HorizontalOptions = "FillAndExpand">
                                         <Label TextColor= "#007AFF" Text = "1s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
-                                        <Picker >
-                                            <Picker.ItemsSource>
-                                                <x:Array Type="{x:Type x:String}">
-                                                  <x:String>10</x:String>
-                                                  <x:String>20</x:String>
-                                                  <x:String>30</x:String>
-                                                </x:Array>
-                                              </Picker.ItemsSource>
-                                    </Picker>
+                                        <Picker x:Name="onePicker" SelectedIndexChanged="Handle_SelectedIndexChanged">
+
+                                      </Picker>
                                         <Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
                                         <Label TextColor= "#007AFF" Text = "5s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand"/>
-                                <Picker >
-                                            <Picker.ItemsSource>
-                                                <x:Array Type="{x:Type x:String}">
-                                                  <x:String>10</x:String>
-                                                  <x:String>20</x:String>
-                                                  <x:String>30</x:String>
-                                                </x:Array>
-                                              </Picker.ItemsSource>
-                                    </Picker>
+                                <Picker x:Name="fivePicker" SelectedIndexChanged="Handle_SelectedIndexChanged">
+
+                                                 </Picker>
                                         <Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
                                         <Label TextColor= "#007AFF" Text = "25s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
-                                        <Picker >
-                                            <Picker.ItemsSource>
-                                                <x:Array Type="{x:Type x:String}">
-                                                  <x:String>10</x:String>
-                                                  <x:String>20</x:String>
-                                                  <x:String>30</x:String>
-                                                </x:Array>
-                                              </Picker.ItemsSource>
-                                    </Picker>
+                                        <Picker x:Name="qtrPicker" SelectedIndexChanged="Handle_SelectedIndexChanged">
+                                 
+                                             </Picker>
                                 <Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
                                         <Label TextColor= "#007AFF" Text = "100s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
-                                        <Picker >
-                                            <Picker.ItemsSource>
-                                                <x:Array Type="{x:Type x:String}">
-                                                  <x:String>10</x:String>
-                                                  <x:String>20</x:String>
-                                                  <x:String>30</x:String>
-                                                </x:Array>
-                                              </Picker.ItemsSource>
-                                    </Picker>
+                                        <Picker x:Name="hundredPicker" SelectedIndexChanged="Handle_SelectedIndexChanged">
+
+                                           </Picker>
                                 <Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
                                     </StackLayout>
                                     <StackLayout HorizontalOptions = "FillAndExpand">
                                         <Label TextColor= "#007AFF" Text = "250s" VerticalTextAlignment = "Center" FontSize = "19" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
 
-                                <Picker >
-                                            <Picker.ItemsSource>
-                                                <x:Array Type="{x:Type x:String}">
-                                                  <x:String>10</x:String>
-                                                  <x:String>20</x:String>
-                                                  <x:String>30</x:String>
-                                                </x:Array>
-                                              </Picker.ItemsSource>
-                                    </Picker><Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
+                                <Picker x:Name="twoFiftyPicker" SelectedIndexChanged="Handle_SelectedIndexChanged">
+
+                                            </Picker><Label TextColor= "#7A8694" Text = "of 10" VerticalTextAlignment = "Center" FontSize = "13" HorizontalTextAlignment ="Center" VerticalOptions = "FillAndExpand" />
                                     </StackLayout>
 
                                 </StackLayout>
@@ -317,7 +287,7 @@
                         
                         <Label  TextColor= "#7A8694" AbsoluteLayout.LayoutBounds="0,0.73,1,0.1" Text = "Export Tag" VerticalTextAlignment = "Center" FontSize = "19" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All"/>
-                        <Entry TextColor ="#007AFF" HorizontalTextAlignment = "Center" Placeholder="Optional" AbsoluteLayout.LayoutBounds="0.5,0.85,0.8,0.1" AbsoluteLayout.LayoutFlags="All" />
+                        <Entry TextColor ="#007AFF" HorizontalTextAlignment = "Center" x:Name="txtTag" Placeholder="Optional" AbsoluteLayout.LayoutBounds="0.5,0.85,0.8,0.1" AbsoluteLayout.LayoutFlags="All" />
 
                         
 
@@ -329,7 +299,7 @@
     </Frame.GestureRecognizers>
                             </Label>
                          
-                        <Label BackgroundColor = "#348EFB" TextColor ="White"  AbsoluteLayout.LayoutBounds= "1,1,0.5,0.1" Text = "Export 0" VerticalTextAlignment = "Center"
+                        <Label BackgroundColor = "#348EFB" TextColor ="White" x:Name="lblExportValue" AbsoluteLayout.LayoutBounds= "1,1,0.5,0.1" Text = "Export 0" VerticalTextAlignment = "Center"
                 HorizontalTextAlignment ="Center"
                 AbsoluteLayout.LayoutFlags="All" >
                             <Frame.GestureRecognizers>

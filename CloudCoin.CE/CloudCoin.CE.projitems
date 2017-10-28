@@ -63,6 +63,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Response.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Stack.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Banker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Exporter.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />

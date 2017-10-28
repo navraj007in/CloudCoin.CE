@@ -12,6 +12,19 @@ namespace CloudCoin.CE
 {
     public partial class CloudCoinPage : ContentPage
     {
+        void Handle_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            updateExportTotal();
+        }
+
+        public void updateExportTotal() {
+            int oneCount = onePicker.SelectedIndex ;
+            int fiveCount = (fivePicker.SelectedIndex )*5;
+            int qtrCount = (qtrPicker.SelectedIndex )*25;
+            int hundredCount = (hundredPicker.SelectedIndex )*100;
+            int twoFiftyCount = (twoFiftyPicker.SelectedIndex )*250;
+            lblExportValue.Text = "Export " + (oneCount + fiveCount + qtrCount + hundredCount+ twoFiftyCount);
+        }
         public static int timeout = 10000;
         FileUtils fileUtils = FileUtils.GetInstance("CloudCoin");
         string homefolder;
@@ -32,7 +45,8 @@ namespace CloudCoin.CE
             else
                 fileUtils = FileUtils.GetInstance(homefolder);
             InitializeComponent();
-            listFiles();
+            if(Device.RuntimePlatform == Device.iOS)
+                listFiles();
 
             fileUtils.CreateDirectoryStructure();
             Title = "CloudCoin CE ver 1.0";
@@ -63,8 +77,41 @@ namespace CloudCoin.CE
             {
                 Console.WriteLine(directory);
             }
+            showCoins();
+            updateExportTotal();
         }
+        public void fillPickers(String oneCount, String fiveCount, String qtrCount, String hundredCount, String twoFiftyCount){
+            for (int i = 0; i <= Convert.ToInt16(oneCount);i++) {
+                onePicker.Items.Add(Convert.ToString(i));
+            }
 
+            for (int i = 0; i <= Convert.ToInt16(fiveCount); i++)
+            {
+                fivePicker.Items.Add(Convert.ToString(i));
+            }
+
+            for (int i = 0; i <= Convert.ToInt16(qtrCount); i++)
+            {
+                qtrPicker.Items.Add(Convert.ToString(i));
+            }
+
+            for (int i = 0; i <= Convert.ToInt16(hundredCount); i++)
+            {
+                hundredPicker.Items.Add(Convert.ToString(i));
+            }
+
+
+            for (int i = 0; i <= Convert.ToInt16(twoFiftyCount); i++)
+            {
+                twoFiftyPicker.Items.Add(Convert.ToString(i));
+            }
+            onePicker.SelectedIndex = 0;
+            fivePicker.SelectedIndex = 0;
+            qtrPicker.SelectedIndex = 0;
+            hundredPicker.SelectedIndex = 0;
+            twoFiftyPicker.SelectedIndex = 0;
+
+        }
         public void listFiles() {
             var files = Directory.GetFiles("CloudCoin/Import");
             foreach (var file in files)
@@ -78,6 +125,20 @@ namespace CloudCoin.CE
                 Console.WriteLine("File Copied succesfully to " + fileUtils.importFolder + Path.GetFileName(file));
            
             }
+
+            var tempfiles = Directory.GetFiles("CloudCoin/Templates");
+            foreach (var file in tempfiles)
+            {
+
+                Console.WriteLine(file);
+                if (File.Exists(fileUtils.templateFolder + Path.GetFileName(file)))
+                    File.Delete(fileUtils.templateFolder + Path.GetFileName(file));
+
+                File.Copy(file, fileUtils.templateFolder + Path.GetFileName(file));
+                Console.WriteLine("File Copied succesfully to " + fileUtils.templateFolder + Path.GetFileName(file));
+
+            }
+
 
             var files2 = Directory.GetFiles(fileUtils.suspectFolder);
             foreach (var file in files2)
@@ -100,7 +161,12 @@ namespace CloudCoin.CE
                 Console.WriteLine("Imported-" + file);
             }
 
+            var tfilesc = Directory.GetFiles(fileUtils.exportFolder);
+            foreach (var file in tfilesc)
+            {
 
+                Console.WriteLine("Export-" + file);
+            }
 
         }
         public void multi_detect()
@@ -201,7 +267,7 @@ namespace CloudCoin.CE
                 after = DateTime.Now;
                 ts = after.Subtract(before);//end the timer
 
-                //grade();
+                grade();
                 // Console.Out.WriteLine("  GRADING DONE NOW SHOWING. Do you wnat to show");// "No coins in import folder.");
                 // Console.In.ReadLine();
                 Console.Out.WriteLine("Time in ms to multi detect pown " + ts.TotalMilliseconds);
@@ -244,7 +310,16 @@ namespace CloudCoin.CE
             frackedTotals = bank.countCoins(fileUtils.frackedFolder);
             partialTotals = bank.countCoins(fileUtils.partialFolder);
 
+            lblOneCount.Text = Convert.ToString(bankTotals[1] + frackedTotals[1] + partialTotals[1]);
+            lblFiveCount.Text = Convert.ToString(bankTotals[2] + frackedTotals[2] + partialTotals[2]);
+            lblQtrCount.Text = Convert.ToString(bankTotals[3] + frackedTotals[3] + partialTotals[3]);
+            lblHundredCount.Text = Convert.ToString(bankTotals[4] + frackedTotals[4] + partialTotals[4]);
+            lblTwoFiftyCount.Text = Convert.ToString(bankTotals[5] + frackedTotals[5] + partialTotals[5]);
 
+            lblBankTotal.Text = Convert.ToString(bankTotals[0] + frackedTotals[0] + partialTotals[0]);
+            lblExportTotal.Text = Convert.ToString(bankTotals[0] + frackedTotals[0] + partialTotals[0]);
+
+            fillPickers(lblOneCount.Text, lblFiveCount.Text,lblQtrCount.Text,lblHundredCount.Text,lblTwoFiftyCount.Text);
             // int[] counterfeitTotals = bank.countCoins( counterfeitFolder );
 
             //setLabelText(lblOnesCount, Convert.ToString(bankTotals[1] + frackedTotals[1] + partialTotals[1]));
@@ -451,6 +526,86 @@ namespace CloudCoin.CE
             HelpEditor.Focused += (sender, e) => { HelpEditor.Unfocus(); };
 
         }
+        bool isJpeg = false;
+        bool isStack = true;
+        public int exportJpegStack = 2;
+
+        public void export()
+        {
+            if (isJpeg == true)
+                exportJpegStack = 1;
+            else
+                exportJpegStack = 2;
+
+            Banker bank = new Banker(fileUtils);
+            int[] bankTotals = bank.countCoins(fileUtils.bankFolder);
+            int[] frackedTotals = bank.countCoins(fileUtils.frackedFolder);
+            int[] partialTotals = bank.countCoins(fileUtils.partialFolder);
+
+            //updateLog("  Your Bank Inventory:");
+            int grandTotal = (bankTotals[0] + frackedTotals[0] + partialTotals[0]);
+            // state how many 1, 5, 25, 100 and 250
+            int exp_1 = onePicker.SelectedIndex;
+            int exp_5 = fivePicker.SelectedIndex;
+            int exp_25 = qtrPicker.SelectedIndex;
+            int exp_100 = hundredPicker.SelectedIndex;
+            int exp_250 = twoFiftyPicker.SelectedIndex;
+            //Warn if too many coins
+
+            if (exp_1 + exp_5 + exp_25 + exp_100 + exp_250 == 0)
+            {
+                Console.WriteLine("Can not export 0 Coins.");
+                Console.WriteLine("Can not export 0 coins");
+                return;
+            }
+
+            //updateLog(Convert.ToString(bankTotals[1] + frackedTotals[1] + bankTotals[2] + frackedTotals[2] + bankTotals[3] + frackedTotals[3] + bankTotals[4] + frackedTotals[4] + bankTotals[5] + frackedTotals[5] + partialTotals[1] + partialTotals[2] + partialTotals[3] + partialTotals[4] + partialTotals[5]));
+
+            if (((bankTotals[1] + frackedTotals[1]) + (bankTotals[2] + frackedTotals[2]) + (bankTotals[3] + frackedTotals[3]) + (bankTotals[4] + frackedTotals[4]) + (bankTotals[5] + frackedTotals[5]) + partialTotals[1] + partialTotals[2] + partialTotals[3] + partialTotals[4] + partialTotals[5]) > 1000)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Out.WriteLine("Warning: You have more than 1000 Notes in your bank. Stack files should not have more than 1000 Notes in them.");
+                Console.Out.WriteLine("Do not export stack files with more than 1000 notes. .");
+                //updateLog("Warning: You have more than 1000 Notes in your bank. Stack files should not have more than 1000 Notes in them.");
+                //updateLog("Do not export stack files with more than 1000 notes. .");
+
+                Console.ForegroundColor = ConsoleColor.White;
+            }//end if they have more than 1000 coins
+
+            Console.Out.WriteLine("  Do you want to export your CloudCoin to (1)jpgs or (2) stack (JSON) file?");
+            int file_type = 0; //reader.readInt(1, 2);
+
+
+
+
+
+            Exporter exporter = new Exporter(fileUtils);
+            //exporter.OnUpdateStatus += Exporter_OnUpdateStatus; ;
+            file_type = exportJpegStack;
+
+            String tag = txtTag.Text;// reader.readString();
+            //Console.Out.WriteLine(("Exporting to:" + exportFolder));
+
+            if (file_type == 1)
+            {
+                exporter.writeJPEGFiles(exp_1, exp_5, exp_25, exp_100, exp_250, tag);
+                // stringToFile( json, "test.txt");
+            }
+            else
+            {
+                exporter.writeJSONFile(exp_1, exp_5, exp_25, exp_100, exp_250, tag);
+            }
+
+
+            // end if type jpge or stack
+
+            //RefreshCoins?.Invoke(this, new EventArgs());
+            //updateLog("Exporting CloudCoins Completed.");
+            showCoins();
+            //Process.Start(fileUtils.exportFolder);
+            lblExportValue.Text = "Export 0";
+            //MessageBox.Show("Export completed.", "Cloudcoins", MessageBoxButtons.OK);
+        }// end export One
 
         void OnTappedSafe(object sender, EventArgs e)
         {
@@ -505,14 +660,16 @@ namespace CloudCoin.CE
             }
 
         }
-        async void OnTappedExportAction(object sender, EventArgs e)
+        void OnTappedExportAction(object sender, EventArgs e)
         {
-            var answer = await DisplayAlert("Message", "Nothing to export.", null, "OK");
+            export();
+          /*  var answer = await DisplayAlert("Message", "Nothing to export.", null, "OK");
             if (!answer)
             {
                 FrameBackground.IsVisible = false;
                 FrameExportAction.IsVisible = false;
             }
+            */
         }
 
         void OnTappedCancel(object sender, EventArgs e)
@@ -538,6 +695,8 @@ namespace CloudCoin.CE
                 ButtonStackFrame.BackgroundColor = Color.White;
                 ButtonStackFrame.OutlineColor = Color.FromHex("#007AFF");
                 ButtonStack.TextColor = Color.FromHex("#383F44");
+                isJpeg = true;
+                isStack = false;
             }
             else
             {
@@ -546,6 +705,8 @@ namespace CloudCoin.CE
                 ButtonJPGFrame.BackgroundColor = Color.White;
                 ButtonJPGFrame.OutlineColor = Color.FromHex("#007AFF");
                 ButtonJPG.TextColor = Color.FromHex("#383F44");
+                isJpeg = false;
+                isStack = true;
             }
         }
 

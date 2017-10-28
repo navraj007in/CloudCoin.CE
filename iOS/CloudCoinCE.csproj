@@ -186,6 +186,9 @@
     <BundleResource Include="Resources\safebtn.png" />
     <BundleResource Include="Resources\settings.png" />
     <BundleResource Include="Resources\worldmap.png" />
+    <BundleResource Include="CloudCoin\Import\238000.CloudCoin.15457896.stack">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
