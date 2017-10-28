@@ -27,8 +27,9 @@ namespace Founders
         public String exportFolder;
         public String partialFolder;
         public String languageFolder;
-        internal string detectedFolder;
-        internal string receiptsFolder;
+        public string detectedFolder;
+        public string receiptsFolder;
+        public string lostFolder;
 
         public static FileUtils GetInstance(String rootFolder)
         {
@@ -39,18 +40,19 @@ namespace Founders
             String frackedFolder = rootFolder + "/" + Config.frackedFolder+ "/";
             String bankFolder = rootFolder + "/" + Config.bankFolder+ "/";
             String templateFolder = rootFolder + "/" + Config.templateFolder+ "/";
-            String counterfeitFolder = rootFolder + "/" + Config.counterfeitFolder+ "/";
-            String directoryFolder = rootFolder + "/" + Config.directoryFolder+ "/";
-            String exportFolder = rootFolder + "/" + Config.exportFolder+ "/";
-            String languageFolder = rootFolder + "/" + Config.languageFolder+ "/";
-            String partialFolder = rootFolder + "/" + Config.partialFolder+ "/";
+            String counterfeitFolder = rootFolder + "/" + Config.counterfeitFolder + "/";
+            String directoryFolder = rootFolder + "/" + Config.directoryFolder + "/";
+            String exportFolder = rootFolder + "/" + Config.exportFolder + "/";
+            String languageFolder = rootFolder + "/" + Config.languageFolder + "/";
+            String partialFolder = rootFolder + "/" + Config.partialFolder + "/";
             String detectedFolder = rootFolder + "/" + Config.detectedFolder + "/";
             String recieptsFolder = rootFolder + "/" + Config.recieptsFolder + "/";
+            String lostFolder = rootFolder + "/" + Config.lostFolder + "/";
 
-			FileUtils fileUtils = new FileUtils(rootFolder, importFolder, importedFolder, 
-                                                trashFolder, suspectFolder, frackedFolder, 
-                                                bankFolder, templateFolder, counterfeitFolder, 
-                                                directoryFolder, exportFolder, partialFolder,detectedFolder,recieptsFolder);
+            FileUtils fileUtils = new FileUtils(rootFolder, importFolder, importedFolder,
+                                                trashFolder, suspectFolder, frackedFolder,
+                                                bankFolder, templateFolder, counterfeitFolder,
+                                                directoryFolder, exportFolder, partialFolder, detectedFolder, recieptsFolder, lostFolder);
 
             return fileUtils;
         }
@@ -59,7 +61,7 @@ namespace Founders
                           String trashFolder, String suspectFolder, String frackedFolder, 
                           String bankFolder, String templateFolder, String counterfeitFolder, 
                           String directoryFolder, String exportFolder, String partialFolder,
-                         String detectedFolder,String recieptsFolder)
+                         String detectedFolder,String recieptsFolder, string lostFolder)
         {
             //  initialise instance variables
             this.rootFolder = rootFolder;
@@ -76,6 +78,7 @@ namespace Founders
             this.partialFolder = partialFolder;
             this.detectedFolder = detectedFolder;
             this.receiptsFolder = recieptsFolder;
+            this.lostFolder = lostFolder;
 
         }  // End constructor
 
@@ -94,6 +97,8 @@ namespace Founders
 			Directory.CreateDirectory(partialFolder);
             Directory.CreateDirectory(detectedFolder);
             Directory.CreateDirectory(receiptsFolder);
+            Directory.CreateDirectory(lostFolder);
+
         }
         /* PUBLIC METHODS */
  

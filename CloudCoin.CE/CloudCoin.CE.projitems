@@ -41,7 +41,6 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)IFilePicker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FileUtils.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)CoreLogger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Importer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Detector.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Frack_Fixer.cs" />
@@ -50,6 +49,20 @@
     <Compile Include="$(MSBuildThisFileDirectory)CloudCoinPage.xaml.cs">
       <DependentUpon>CloudCoinPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CoinUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\CloudCoin.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Config.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\CoreLogger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\DetectionAgent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\MyClass.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ProgressEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\RAIDA.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\RAIDA_Status.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Receipt.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\ReceitDetail.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Response.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Stack.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Core\Banker.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />
@@ -66,5 +79,11 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)CloudCoinPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Core\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Core\packages.config" />
   </ItemGroup>
 </Project>

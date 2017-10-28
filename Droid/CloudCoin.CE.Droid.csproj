@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>CloudCoin.CE.Droid</RootNamespace>
     <AssemblyName>CloudCoin.CE.Droid</AssemblyName>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -119,6 +119,7 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="FilePicker.cs" />
+    <Compile Include="Grader.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -129,12 +130,6 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CloudCoinCore\CloudCoinCore.csproj">
-      <Project>{74BB4FD8-823E-433C-8836-25D6B6E1A26F}</Project>
-      <Name>CloudCoinCore</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="..\CloudCoin.CE\CloudCoin.CE.projitems" Label="Shared" Condition="Exists('..\CloudCoin.CE\CloudCoin.CE.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

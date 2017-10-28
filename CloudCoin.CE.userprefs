@@ -1,22 +1,36 @@
 ﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/MultiDetect.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/CloudCoinPage.xaml.cs">
     <Files>
-      <File FileName="CloudCoinCore/ProgressEventArgs.cs" Line="24" Column="2" />
       <File FileName="CloudCoin.CE/Views/HomePage.xaml.cs" Line="229" Column="2" />
       <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml.cs" Line="49" Column="29" />
       <File FileName="CloudCoin.CE/Importer.cs" Line="37" Column="18" />
-      <File FileName="CloudCoin.CE/Detector.cs" Line="9" Column="2" />
+      <File FileName="CloudCoin.CE/Detector.cs" Line="162" Column="19" />
       <File FileName="CloudCoin.CE/Views/HomePage.xaml" Line="31" Column="1" />
-      <File FileName="CloudCoinCore/Receipt.cs" Line="31" Column="26" />
-      <File FileName="CloudCoinCore/CoreLogger.cs" Line="67" Column="3" />
-      <File FileName="CloudCoinCore/DetectionAgent.cs" Line="238" Column="22" />
-      <File FileName="CloudCoinCore/RAIDA_Status.cs" Line="3" Column="26" />
-      <File FileName="CloudCoin.CE/Frack_Fixer.cs" Line="96" Column="54" />
+      <File FileName="CloudCoin.CE/Frack_Fixer.cs" Line="281" Column="57" />
       <File FileName="CloudCoin.CE/App.xaml.cs" Line="4" Column="1" />
       <File FileName="CloudCoin.CE/CloudCoinPage.xaml" Line="388" Column="1" />
-      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="62" Column="21" />
-      <File FileName="CloudCoin.CE/MultiDetect.cs" Line="117" Column="20" />
+      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="161" Column="13" />
+      <File FileName="CloudCoin.CE/MultiDetect.cs" Line="173" Column="9" />
+      <File FileName="iOS/Grader.cs" Line="112" Column="45" />
+      <File FileName="CloudCoin.CE/FileUtils.cs" Line="75" Column="56" />
+      <File FileName="CloudCoin.CE/CoinUtils.cs" Line="403" Column="15" />
+      <File FileName="CloudCoin.CE/Core/CoreLogger.cs" Line="49" Column="4" />
+      <File FileName="CloudCoin.CE/CoreLogger.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CloudCoin.CE" expanded="True">
+            <Node name="CloudCoin.CE" expanded="True">
+              <Node name="CloudCoinPage.xaml" expanded="True">
+                <Node name="CloudCoinPage.xaml.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="CloudCoin.CE.Droid" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

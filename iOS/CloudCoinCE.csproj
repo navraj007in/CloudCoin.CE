@@ -190,6 +190,8 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="FilePicker.cs" />
+    <Compile Include="Grader.cs" />
+    <Compile Include="FixitHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -199,12 +201,6 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CloudCoinCore\CloudCoinCore.csproj">
-      <Project>{74BB4FD8-823E-433C-8836-25D6B6E1A26F}</Project>
-      <Name>CloudCoinCore</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="elcimagepicker">

@@ -24,6 +24,115 @@ namespace CloudCoin.CE
             });
         }
 
+        public void multi_detect()
+        {
+            Console.Out.WriteLine("");
+            Console.Out.WriteLine("  Detecting Authentication of Suspect Coins");// "Detecting Authentication of Suspect Coins");
+            MultiDetect multi_detector = new MultiDetect(fileUtils);
+            //multi_detector.txtLogs = txtLogs;
+
+            //Calculate timeout
+            int detectTime = 20000;
+            if (RAIDA_Status.getLowest21() > detectTime)
+            {
+                detectTime = RAIDA_Status.getLowest21() + 200;
+            }//Slow connection
+
+            multi_detector.detectMulti(detectTime);
+            // grade();
+            // showCoins();
+
+        }//end multi detect
+
+        public void grade()
+        {
+            Console.Out.WriteLine("");
+            updateLog("  Grading Authenticated Coins");
+            Console.Out.WriteLine("  Grading Authenticated Coins");// "Detecting Authentication of Suspect Coins");
+            Grader grader = new Grader(fileUtils);
+            int[] detectionResults = grader.gradeAll(5000, 2000);
+            //updateLog("  Total imported to bank: " + detectionResults[0]);
+            //updateLog("  Total imported to fracked: " + detectionResults[1]);
+            //updateLog("  Total Counterfeit: " + detectionResults[2]);
+            //updateLog("  Total moved to Lost folder: " + detectionResults[4]);
+
+            //Console.Out.WriteLine("  Total imported to bank: " + detectionResults[0]);//"Total imported to bank: "
+            //Console.Out.WriteLine("  Total imported to fracked: " + detectionResults[1]);//"Total imported to fracked: "                                                                       // And the bank and the fractured for total
+            //Console.Out.WriteLine("  Total Counterfeit: " + detectionResults[2]);//"Total Counterfeit: "
+            //Console.Out.WriteLine("  Total Kept in suspect folder: " + detectionResults[3]);//"Total Kept in suspect folder: " 
+            //Console.Out.WriteLine("  Total moved to Lost folder: " + detectionResults[4]);//"Total Kept in suspect folder: " 
+
+        }//end detect
+
+
+        public void import(int resume = 0)
+        {
+
+            //Check RAIDA Status
+
+            //CHECK TO SEE IF THERE ARE UN DETECTED COINS IN THE SUSPECT FOLDER
+            String[] suspectFileNames = new DirectoryInfo(fileUtils.suspectFolder).GetFiles().Select(o => o.Name).ToArray();//Get all files in suspect folder
+            if (suspectFileNames.Length > 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Out.WriteLine("  Finishing importing coins from last time...");//
+                updateLog("  Finishing importing coins from last time...");
+
+                Console.ForegroundColor = ConsoleColor.White;
+                multi_detect();
+                Console.Out.WriteLine("  Now looking in import folder for new coins...");// "Now looking in import folder for new coins...");
+                updateLog("  Now looking in import folder for new coins...");
+            } //end if there are files in the suspect folder that need to be imported
+
+
+            Console.Out.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Out.WriteLine("  Loading all CloudCoins in your import folder: ");// "Loading all CloudCoins in your import folder: " );
+            Console.Out.WriteLine(fileUtils.importFolder);
+            updateLog("  Loading all CloudCoins in your import folder: ");
+            updateLog(fileUtils.importFolder);
+
+            Console.ForegroundColor = ConsoleColor.White;
+            Importer importer = new Importer(fileUtils);
+            if (!importer.importAll() && resume == 0)//Moves all CloudCoins from the Import folder into the Suspect folder. 
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Out.WriteLine("  No coins in import folder.");// "No coins in import folder.");
+                updateLog("No coins in import Folder");
+
+                Console.ForegroundColor = ConsoleColor.White;
+                //App.Current.Dispatcher.Invoke(delegate
+                //{
+                    
+                    //cmdRestore.IsEnabled = true;
+                    //cmdImport.IsEnabled = true;
+                //});
+
+            }
+            else
+            {
+                DateTime before = DateTime.Now;
+                DateTime after;
+                TimeSpan ts = new TimeSpan();
+                //Console.Out.WriteLine("  IMPORT DONE> NOW DETECTING MULTI. Do you want to start detecting?");// "No coins in import folder.");
+                // Console.In.ReadLine();
+                multi_detect();
+                // Console.Out.WriteLine("  DETCATION DONE> NOW GRADING. Do you want to start Grading?");// "No coins in import folder.");
+                // Console.In.ReadLine();
+                after = DateTime.Now;
+                ts = after.Subtract(before);//end the timer
+
+                grade();
+                // Console.Out.WriteLine("  GRADING DONE NOW SHOWING. Do you wnat to show");// "No coins in import folder.");
+                // Console.In.ReadLine();
+                Console.Out.WriteLine("Time in ms to multi detect pown " + ts.TotalMilliseconds);
+                RAIDA_Status.showMultiMs();
+                showCoins();
+                // multi_detect();
+                //detect(1);
+            }//end if coins to import
+        }   // end import
+
         void Handle_Clicked(object sender, System.EventArgs e)
         {
             DirectoryInfo di = new DirectoryInfo(fileUtils.rootFolder);
@@ -42,6 +151,44 @@ namespace CloudCoin.CE
 
             //DependencyService.Get<IFilePicker>().pickFile();
         }
+
+        int[] bankTotals;
+        int[] frackedTotals;
+        int[] partialTotals;
+
+        public void showCoins()
+        {
+
+            Console.Out.WriteLine("");
+            // This is for consol apps.
+            Banker bank = new Banker(fileUtils);
+            bankTotals = bank.countCoins(fileUtils.bankFolder);
+            frackedTotals = bank.countCoins(fileUtils.frackedFolder);
+            partialTotals = bank.countCoins(fileUtils.partialFolder);
+            // int[] counterfeitTotals = bank.countCoins( counterfeitFolder );
+
+            //setLabelText(lblOnesCount, Convert.ToString(bankTotals[1] + frackedTotals[1] + partialTotals[1]));
+            //setLabelText(lblFivesCount, Convert.ToString(bankTotals[2] + frackedTotals[2] + partialTotals[2]));
+            //setLabelText(lblQtrCount, Convert.ToString(bankTotals[3] + frackedTotals[3] + partialTotals[3]));
+            //setLabelText(lblHundredCount, Convert.ToString(bankTotals[4] + frackedTotals[4] + partialTotals[4]));
+            //setLabelText(lblTwoFiftiesCount, Convert.ToString(bankTotals[5] + frackedTotals[5] + partialTotals[5]));
+
+            //setLabelText(lblOnesValue, Convert.ToString(bankTotals[1] + frackedTotals[1] + partialTotals[1]));
+            //setLabelText(lblFivesValue, Convert.ToString((bankTotals[2] + frackedTotals[2] + partialTotals[2]) * 5));
+            //setLabelText(lblQtrValue, Convert.ToString((bankTotals[3] + frackedTotals[3] + partialTotals[3]) * 25));
+            //setLabelText(lblHundredValue, Convert.ToString((bankTotals[4] + frackedTotals[4] + partialTotals[4]) * 100));
+            //setLabelText(lblTwoFiftiesValue, Convert.ToString((bankTotals[5] + frackedTotals[5] + partialTotals[5]) * 250));
+            //setLabelText(lblTotalCoins, "Total Coins in Bank : " + Convert.ToString(bankTotals[0] + frackedTotals[0] + partialTotals[0]));
+
+            /*setLabelText(lblNotesTotal, Convert.ToString(bankTotals[1] + frackedTotals[1] + partialTotals[1]
+                + bankTotals[2] + frackedTotals[2] + partialTotals[2]
+                + bankTotals[3] + frackedTotals[3] + partialTotals[3]
+                + bankTotals[4] + frackedTotals[4] + partialTotals[4]
+                + bankTotals[5] + frackedTotals[5] + partialTotals[5]));
+*/
+            //setLabelText(lblNotesTotal, Convert.ToString(bankTotals[0] + frackedTotals[0] + partialTotals[0]));
+            //updateNotes();
+        }// end show
 
         void Detector_OnUpdateStatus(object sender, ProgressEventArgs e)
         {
@@ -108,7 +255,7 @@ namespace CloudCoin.CE
             Console.WriteLine("msg");
         }
 
-        public void import(int resume = 0)
+        public void oldimport(int resume = 0)
         {
 
             //Check RAIDA Status
