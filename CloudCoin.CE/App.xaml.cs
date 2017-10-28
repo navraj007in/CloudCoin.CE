@@ -21,7 +21,7 @@ namespace CloudCoin.CE
             if (Device.RuntimePlatform == Device.iOS)
                 MainPage = new CloudCoinPage();
             else
-                MainPage = new NavigationPage(new MainPage());
+                MainPage = new NavigationPage(new CloudCoinPage());
 
            // Xamarin.FormsMaps.Init();
         }
