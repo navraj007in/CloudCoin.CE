@@ -2,7 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
-
+using Xamarin.Forms;
+using CloudCoin.CE.Interface;
 
 namespace Founders
 {
@@ -37,7 +38,7 @@ namespace Founders
             int totalSaved = m1 + (m5 * 5) + (m25 * 25) + (m100 * 100) + (m250 * 250);// Total value of all coins
             int coinCount = m1 + m5 + m25 + m100 + m250; // Total number of coins 
             String[] coinsToDelete = new String[coinCount];
-            String[] bankedFileNames = new DirectoryInfo(this.fileUtils.bankFolder).GetFiles().Select(o => o.Name).ToArray(); // list all file names with bank extension
+            String[] bankedFileNames = new DirectoryInfo(this.fileUtils.counterfeitFolder).GetFiles().Select(o => o.Name).ToArray(); // list all file names with bank extension
             String[] frackedFileNames = new DirectoryInfo(this.fileUtils.frackedFolder).GetFiles().Select(o => o.Name).ToArray(); // list all file names with bank extension
             String[] partialFileNames = new DirectoryInfo(this.fileUtils.partialFolder).GetFiles().Select(o => o.Name).ToArray();
 
@@ -53,7 +54,7 @@ namespace Founders
             // Look at all the money files and choose the ones that are needed.
             for (int i = 0; i < bankedFileNames.Length; i++)
             {
-                String bankFileName = (this.fileUtils.bankFolder + bankedFileNames[i]);
+                String bankFileName = (this.fileUtils.counterfeitFolder + bankedFileNames[i]);
                 String frackedFileName = (this.fileUtils.frackedFolder + bankedFileNames[i]);
                 String partialFileName = (this.fileUtils.partialFolder + bankedFileNames[i]);
 
@@ -351,6 +352,11 @@ namespace Founders
             File.WriteAllText(filename, json);
             Console.Out.WriteLine("Writing to : ");
             CoreLogger.Log("Writing to : " + filename);
+
+            string[] filestoexport = new string[1];
+            filestoexport[0] = filename;
+            DependencyService.Get<Mailer>().SendMail(fileUtils.exportFolder, filestoexport);
+          
             Console.Out.WriteLine(filename);
             /*DELETE FILES THAT HAVE BEEN EXPORTED*/
             for (int cc = 0; cc < coinsToDelete.Length; cc++)

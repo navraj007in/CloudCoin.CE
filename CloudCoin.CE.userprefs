@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/CloudCoinPage.xaml.cs">
     <Files>
-      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="51" Column="17" />
+      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="533" Column="28" />
       <File FileName="CloudCoin.CE/MultiDetect.cs" Line="158" Column="17" />
       <File FileName="iOS/Grader.cs" Line="22" Column="51" />
       <File FileName="CloudCoin.CE/FileUtils.cs" Line="105" Column="45" />
@@ -9,7 +9,8 @@
       <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml.cs" Line="16" Column="35" />
       <File FileName="CloudCoin.CE/CloudCoinPage.xaml" Line="306" Column="59" />
       <File FileName="CloudCoin.CE/Core/Exporter.cs" Line="154" Column="64" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="iOS/Mail.cs" Line="51" Column="13" />
+      <File FileName="CloudCoin.CE/Interface/Mailer.cs" Line="6" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />

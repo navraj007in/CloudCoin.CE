@@ -196,6 +196,7 @@
     <Compile Include="FilePicker.cs" />
     <Compile Include="Grader.cs" />
     <Compile Include="FixitHelper.cs" />
+    <Compile Include="Mail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />

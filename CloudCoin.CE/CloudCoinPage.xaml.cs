@@ -7,6 +7,7 @@ using Founders;
 using System.Linq;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using CloudCoin.CE.Interface;
 
 namespace CloudCoin.CE
 {
@@ -594,6 +595,7 @@ namespace CloudCoin.CE
             else
             {
                 exporter.writeJSONFile(exp_1, exp_5, exp_25, exp_100, exp_250, tag);
+            
             }
 
 
@@ -604,6 +606,7 @@ namespace CloudCoin.CE
             showCoins();
             //Process.Start(fileUtils.exportFolder);
             lblExportValue.Text = "Export 0";
+
             //MessageBox.Show("Export completed.", "Cloudcoins", MessageBoxButtons.OK);
         }// end export One
 
