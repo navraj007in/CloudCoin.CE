@@ -14,9 +14,26 @@ namespace CloudCoin.CE
     {
         public static int timeout = 10000;
         FileUtils fileUtils = FileUtils.GetInstance("CloudCoin");
+        string homefolder;
         public CloudCoinPage()
         {
+            var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            homefolder = documents + "/CloudCoin";
+            try
+            {
+                Directory.CreateDirectory(homefolder);
+            }
+            catch(Exception e){
+                Console.WriteLine(e.Message);
+            }
+
+            if (Device.RuntimePlatform == Device.iOS)
+                fileUtils = FileUtils.GetInstance(homefolder);
+            else
+                fileUtils = FileUtils.GetInstance(homefolder);
             InitializeComponent();
+            listFiles();
+
             fileUtils.CreateDirectoryStructure();
             Title = "CloudCoin CE ver 1.0";
             Task.Run(() => {
@@ -24,8 +41,8 @@ namespace CloudCoin.CE
             });
 
             //var directories = Directory.EnumerateDirectories("./");
-            Directory.CreateDirectory("./CloudCoin");
-            var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            //Directory.CreateDirectory("./CloudCoin");
+            //var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             Console.WriteLine(("Folder Path- "+documents));
             Directory.CreateDirectory(documents + "/Bank");
             Directory.CreateDirectory(documents + "/Import");
@@ -33,8 +50,12 @@ namespace CloudCoin.CE
             Directory.CreateDirectory(documents + "/Export");
             Directory.CreateDirectory(documents + "/Templates");
             Directory.CreateDirectory(documents + "/Suspect");
+            Directory.CreateDirectory(documents + "/Trash");
+            Directory.CreateDirectory(documents + "/Partial");
+            Directory.CreateDirectory(documents + "/Imported");
+            Directory.CreateDirectory(documents + "/Fracked");
 
-            var directories = Directory.EnumerateDirectories(documents );
+            var directories = Directory.EnumerateDirectories(homefolder );
 
             //Directory.CreateDirectory("./cBank");
 
@@ -44,6 +65,44 @@ namespace CloudCoin.CE
             }
         }
 
+        public void listFiles() {
+            var files = Directory.GetFiles("CloudCoin/Import");
+            foreach (var file in files)
+            {
+                
+                Console.WriteLine( file);
+                if (File.Exists(fileUtils.importFolder  + Path.GetFileName(file)))
+                    File.Delete(fileUtils.importFolder  + Path.GetFileName(file));
+                
+                File.Copy(file, fileUtils.importFolder + Path.GetFileName(file));
+                Console.WriteLine("File Copied succesfully to " + fileUtils.importFolder + Path.GetFileName(file));
+           
+            }
+
+            var files2 = Directory.GetFiles(fileUtils.suspectFolder);
+            foreach (var file in files2)
+            {
+                Console.WriteLine("Target-"+file);
+                File.Delete(file);
+
+            }
+
+            var filesc = Directory.GetFiles(fileUtils.counterfeitFolder);
+            foreach (var file in filesc)
+            {
+
+                Console.WriteLine("Counterfeit-"+file);
+            }
+            var filesim = Directory.GetFiles(fileUtils.importedFolder);
+            foreach (var file in filesim)
+            {
+
+                Console.WriteLine("Imported-" + file);
+            }
+
+
+
+        }
         public void multi_detect()
         {
             Console.Out.WriteLine("");
@@ -397,7 +456,10 @@ namespace CloudCoin.CE
         }
         void OnTappedImport(object sender, EventArgs e)
         {
-            import();
+            Task.Run(() => { 
+                import();
+            }); 
+
             //FrameBackground.IsVisible = true;
             //FrameImportAction.IsVisible = true;
         }

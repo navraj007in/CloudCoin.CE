@@ -333,41 +333,100 @@ Lme_3:
 	.no_dead_strip shareExtension_ShareViewController_DidSelectPost
 shareExtension_ShareViewController_DidSelectPost:
 .loc 1 37 0 prologue_end
-.word 0xa9bc7bfd
+.word 0xa9ba7bfd
 .word 0x910003fd
-.word 0xf9000ba0
+.word 0xa9016bb9
+.word 0xaa0003fa
 
 adrp x16, mono_aot_shareExtension_got@PAGE+0
 add x16, x16, mono_aot_shareExtension_got@PAGEOFF
 ldr x16, [x16, #232]
-.word 0xf9000fb0
+.word 0xf90013b0
 .word 0xf9400a11
-.word 0xf90013b1
-.word 0xf9400fb1
-.word 0xf9403231
+.word 0xf90017b1
+.word 0xd2800019
+.word 0xf9001fbf
+.word 0xf94013b1
+.word 0xf9403e31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf94013b1
+.word 0xf94017b1
 .word 0xf9400231
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9400fb1
-.word 0xf9405231
+.word 0xf94013b1
+.word 0xf9405e31
 .word 0xb4000051
 .word 0xd63f0220
 .loc 1 41 0
-.word 0xf9400fb1
-.word 0xf9406231
+.word 0xf94013b1
+.word 0xf9406e31
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9400ba1
-.word 0xaa0103e0
-.word 0xf9400021
+.word 0xaa1a03e0
+.word 0xaa1a03e0
+.word 0xf9400341
 .word 0xf9412430
 .word 0xd63f0200
-.word 0xf9001ba0
-.word 0xf9400fb1
-.word 0xf9408a31
+.word 0xf9002fa0
+.word 0xf94013b1
+.word 0xf9409631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9402fa1
+.word 0xaa0103e0
+.word 0xf9400021
+.word 0xf940d030
+.word 0xd63f0200
+.word 0xf9002ba0
+.word 0xf94013b1
+.word 0xf940be31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf9402ba0
+.word 0xd2800001
+.word 0xb9801801
+.word 0xeb1f003f
+.word 0x10000011
+.word 0x540008a9
+.word 0xf9401000
+.word 0xaa0003f9
+.loc 1 42 0
+.word 0xf94013b1
+.word 0xf940ee31
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1903e0
+.word 0xaa1903e0
+.word 0xf9400321
+.word 0xf940d830
+.word 0xd63f0200
+.word 0xf90027a0
+.word 0xf94013b1
+.word 0xf9411631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xf94027a0
+.word 0xd2800001
+.word 0xb9801801
+.word 0xeb1f003f
+.word 0x10000011
+.word 0x540005e9
+.word 0xf9401000
+.word 0xf9001fa0
+.loc 1 44 0
+.word 0xf94013b1
+.word 0xf9414631
+.word 0xb4000051
+.word 0xd63f0220
+.word 0xaa1a03e0
+.word 0xaa1a03e0
+.word 0xf9400341
+.word 0xf9412430
+.word 0xd63f0200
+.word 0xf90023a0
+.word 0xf94013b1
+.word 0xf9416e31
 .word 0xb4000051
 .word 0xd63f0220
 .word 0xd2800000
@@ -378,36 +437,40 @@ ldr x0, [x16, #240]
 .word 0xd2800001
 bl _p_4
 .word 0xaa0003e1
-.word 0xf9401ba3
+.word 0xf94023a3
 .word 0xd2800000
 .word 0xaa0303e0
 .word 0xd2800002
 .word 0xf9400063
-.word 0xf940d070
+.word 0xf940d470
 .word 0xd63f0200
-.word 0xf9400fb1
-.word 0xf940d231
+.word 0xf94013b1
+.word 0xf941b631
 .word 0xb4000051
 .word 0xd63f0220
-.loc 1 42 0
-.word 0xf9400fb1
-.word 0xf940e231
+.loc 1 45 0
+.word 0xf94013b1
+.word 0xf941c631
 .word 0xb4000051
 .word 0xd63f0220
-.word 0xf9400fb1
-.word 0xf940f231
+.word 0xf94013b1
+.word 0xf941d631
 .word 0xb4000051
 .word 0xd63f0220
+.word 0xa9416bb9
 .word 0x910003bf
-.word 0xa8c47bfd
+.word 0xa8c67bfd
 .word 0xd65f03c0
+.word 0xd2800f60
+.word 0xaa1103e1
+bl _p_5
 
 Lme_4:
 .text
 	.align 4
 	.no_dead_strip shareExtension_ShareViewController_GetConfigurationItems
 shareExtension_ShareViewController_GetConfigurationItems:
-.loc 1 45 0 prologue_end
+.loc 1 48 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
 .word 0xf9000bba
@@ -432,7 +495,7 @@ ldr x16, [x16, #248]
 .word 0xf9405a31
 .word 0xb4000051
 .word 0xd63f0220
-.loc 1 47 0
+.loc 1 50 0
 .word 0xf94013b1
 .word 0xf9406a31
 .word 0xb4000051
@@ -445,7 +508,7 @@ ldr x0, [x16, #256]
 .word 0xd2800001
 bl _p_4
 .word 0xaa0003fa
-.loc 1 48 0
+.loc 1 51 0
 .word 0xf94013b1
 .word 0xf9409631
 .word 0xb4000051
@@ -539,7 +602,7 @@ unbox_trampoline_addresses:
 unwind_info:
 
 	.byte 13,12,31,0,68,14,64,157,8,158,7,68,13,29,13,12,31,0,68,14,48,157,6,158,5,68,13,29,16,12,31,0
-	.byte 68,14,64,157,8,158,7,68,13,29,68,154,6
+	.byte 68,14,64,157,8,158,7,68,13,29,68,154,6,18,12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10,154,9
 
 .text
 	.align 4
@@ -577,10 +640,18 @@ add x16, x16, mono_aot_shareExtension_got@PAGEOFF
 ldr x16, [x16, #304]
 br x16
 .word 343
+	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
+plt__jit_icall_mono_arch_throw_corlib_exception:
+_p_5:
+adrp x16, mono_aot_shareExtension_got@PAGE+0
+add x16, x16, mono_aot_shareExtension_got@PAGEOFF
+ldr x16, [x16, #312]
+br x16
+.word 351
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_shareExtension_got, 312
+.lcomm mono_aot_shareExtension_got, 320
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -603,7 +674,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "8002A207-9D40-4D00-940C-82F84C16230B"
+	.asciz "EE97CF78-F0AF-45D5-B87B-3A0AF8EA9DE8"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -680,13 +751,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 34,312,5,8,70,391195135,0,1101
-	.long 128,8,8,10,0,25,1728,616
-	.long 352,184,0,296,328,232,0,176
+	.long 34,320,6,8,70,391195135,0,1221
+	.long 128,8,8,10,0,25,1856,624
+	.long 360,184,0,296,336,232,0,176
 	.long 32,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 104,16,165,159,234,107,68,11,192,6,45,162,237,68,44,42
+	.byte 205,65,27,92,7,103,30,231,224,141,133,39,106,9,154,83
 	.globl _mono_aot_module_shareExtension_info
 	.align 3
 _mono_aot_module_shareExtension_info:
@@ -1084,7 +1155,52 @@ LDIFF_SYM56=Lme_3 - shareExtension_ShareViewController_IsContentValid
 Lfde3_end:
 
 .section __DWARF, __debug_info,regular,debug
+LTDIE_9:
 
+	.byte 5
+	.asciz "Foundation_NSExtensionItem"
+
+	.byte 40,16
+LDIFF_SYM57=LTDIE_4 - Ldebug_info_start
+	.long LDIFF_SYM57
+	.byte 2,35,0,0,7
+	.asciz "Foundation_NSExtensionItem"
+
+LDIFF_SYM58=LTDIE_9 - Ldebug_info_start
+	.long LDIFF_SYM58
+LTDIE_9_POINTER:
+
+	.byte 13
+LDIFF_SYM59=LTDIE_9 - Ldebug_info_start
+	.long LDIFF_SYM59
+LTDIE_9_REFERENCE:
+
+	.byte 14
+LDIFF_SYM60=LTDIE_9 - Ldebug_info_start
+	.long LDIFF_SYM60
+LTDIE_10:
+
+	.byte 5
+	.asciz "Foundation_NSItemProvider"
+
+	.byte 40,16
+LDIFF_SYM61=LTDIE_4 - Ldebug_info_start
+	.long LDIFF_SYM61
+	.byte 2,35,0,0,7
+	.asciz "Foundation_NSItemProvider"
+
+LDIFF_SYM62=LTDIE_10 - Ldebug_info_start
+	.long LDIFF_SYM62
+LTDIE_10_POINTER:
+
+	.byte 13
+LDIFF_SYM63=LTDIE_10 - Ldebug_info_start
+	.long LDIFF_SYM63
+LTDIE_10_REFERENCE:
+
+	.byte 14
+LDIFF_SYM64=LTDIE_10 - Ldebug_info_start
+	.long LDIFF_SYM64
 	.byte 2
 	.asciz "shareExtension.ShareViewController:DidSelectPost"
 	.asciz "shareExtension_ShareViewController_DidSelectPost"
@@ -1096,24 +1212,34 @@ Lfde3_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM57=LTDIE_0_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM57
-	.byte 2,141,16,0
+LDIFF_SYM65=LTDIE_0_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM65
+	.byte 1,106,11
+	.asciz "item"
+
+LDIFF_SYM66=LTDIE_9_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM66
+	.byte 1,105,11
+	.asciz "itemProvider"
+
+LDIFF_SYM67=LTDIE_10_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM67
+	.byte 2,141,56,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM58=Lfde4_end - Lfde4_start
-	.long LDIFF_SYM58
+LDIFF_SYM68=Lfde4_end - Lfde4_start
+	.long LDIFF_SYM68
 Lfde4_start:
 
 	.long 0
 	.align 3
 	.quad shareExtension_ShareViewController_DidSelectPost
 
-LDIFF_SYM59=Lme_4 - shareExtension_ShareViewController_DidSelectPost
-	.long LDIFF_SYM59
+LDIFF_SYM69=Lme_4 - shareExtension_ShareViewController_DidSelectPost
+	.long LDIFF_SYM69
 	.long 0
-	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29
+	.byte 12,31,0,68,14,96,157,12,158,11,68,13,29,68,153,10,154,9
 	.align 3
 Lfde4_end:
 
@@ -1123,34 +1249,34 @@ Lfde4_end:
 	.asciz "shareExtension.ShareViewController:GetConfigurationItems"
 	.asciz "shareExtension_ShareViewController_GetConfigurationItems"
 
-	.byte 1,45
+	.byte 1,48
 	.quad shareExtension_ShareViewController_GetConfigurationItems
 	.quad Lme_5
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM60=LTDIE_0_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM60
+LDIFF_SYM70=LTDIE_0_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM70
 	.byte 2,141,24,11
 	.asciz "V_0"
 
-LDIFF_SYM61=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM61
+LDIFF_SYM71=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM71
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM62=Lfde5_end - Lfde5_start
-	.long LDIFF_SYM62
+LDIFF_SYM72=Lfde5_end - Lfde5_start
+	.long LDIFF_SYM72
 Lfde5_start:
 
 	.long 0
 	.align 3
 	.quad shareExtension_ShareViewController_GetConfigurationItems
 
-LDIFF_SYM63=Lme_5 - shareExtension_ShareViewController_GetConfigurationItems
-	.long LDIFF_SYM63
+LDIFF_SYM73=Lme_5 - shareExtension_ShareViewController_GetConfigurationItems
+	.long LDIFF_SYM73
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,154,6
 	.align 3
@@ -1169,22 +1295,22 @@ Lfde5_end:
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM64=LTDIE_0_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM64
+LDIFF_SYM74=LTDIE_0_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM74
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM65=Lfde6_end - Lfde6_start
-	.long LDIFF_SYM65
+LDIFF_SYM75=Lfde6_end - Lfde6_start
+	.long LDIFF_SYM75
 Lfde6_start:
 
 	.long 0
 	.align 3
 	.quad shareExtension_ShareViewController_ReleaseDesignerOutlets
 
-LDIFF_SYM66=Lme_6 - shareExtension_ShareViewController_ReleaseDesignerOutlets
-	.long LDIFF_SYM66
+LDIFF_SYM76=Lme_6 - shareExtension_ShareViewController_ReleaseDesignerOutlets
+	.long LDIFF_SYM76
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3

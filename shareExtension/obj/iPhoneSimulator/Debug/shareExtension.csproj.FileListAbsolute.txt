@@ -1,0 +1,9 @@
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/bin/iPhoneSimulator/Debug/shareExtension.dll
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/bin/iPhoneSimulator/Debug/shareExtension.pdb
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0.1/ibtool/_BundleResourceWithLogicalName.items
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0.1/actool/_PartialAppManifest.items
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0.1/actool/_BundleResourceWithLogicalName.items
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhoneSimulator/Debug/device-builds/iphone10.4-11.0.1/optimized/
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhoneSimulator/Debug/shareExtension.csproj.CoreCompileInputs.cache
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhoneSimulator/Debug/shareExtension.dll
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhoneSimulator/Debug/shareExtension.pdb

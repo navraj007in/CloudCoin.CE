@@ -7,3 +7,4 @@
 /Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/shareExtension.csproj.CoreCompileInputs.cache
 /Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/shareExtension.dll
 /Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/shareExtension.pdb
+/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/shareExtension.csprojResolveAssemblyReference.cache

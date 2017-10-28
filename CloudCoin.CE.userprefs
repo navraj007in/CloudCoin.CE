@@ -1,24 +1,12 @@
 ﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
+  <MonoDevelop.Ide.Workbench ActiveDocument="shareExtension/ShareViewController.cs">
     <Files>
-      <File FileName="CloudCoin.CE/Views/HomePage.xaml.cs" Line="229" Column="2" />
-      <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml.cs" Line="49" Column="29" />
-      <File FileName="CloudCoin.CE/Importer.cs" Line="37" Column="18" />
-      <File FileName="CloudCoin.CE/Detector.cs" Line="162" Column="19" />
-      <File FileName="CloudCoin.CE/Views/HomePage.xaml" Line="31" Column="1" />
-      <File FileName="CloudCoin.CE/Frack_Fixer.cs" Line="281" Column="57" />
-      <File FileName="CloudCoin.CE/App.xaml.cs" Line="4" Column="1" />
-      <File FileName="CloudCoin.CE/CloudCoinPage.xaml" Line="388" Column="1" />
-      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="80" Column="17" />
+      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="39" Column="13" />
       <File FileName="CloudCoin.CE/MultiDetect.cs" Line="173" Column="9" />
       <File FileName="iOS/Grader.cs" Line="112" Column="45" />
       <File FileName="CloudCoin.CE/FileUtils.cs" Line="105" Column="45" />
-      <File FileName="CloudCoin.CE/CoinUtils.cs" Line="403" Column="15" />
-      <File FileName="CloudCoin.CE/Core/CoreLogger.cs" Line="49" Column="4" />
-      <File FileName="CloudCoin.CE/CoreLogger.cs" Line="1" Column="1" />
-      <File FileName="iOS/Info.plist" />
-      <File FileName="iOS/Entitlements.plist" />
-      <File FileName="shareExtension/ShareViewController.cs" Line="1" Column="1" />
+      <File FileName="shareExtension/ShareViewController.cs" Line="41" Column="40" />
+      <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml.cs" Line="49" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
