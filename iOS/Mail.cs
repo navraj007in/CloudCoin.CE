@@ -36,9 +36,12 @@ namespace CloudCoin.CE.iOS
                 mailController.SetToRecipients(new string[] { "" });
                 mailController.SetSubject("Export CloudCoins");
                 mailController.SetMessageBody("", false);
-
-                NSData data = NSData.FromFile(filenames[0]);
-                mailController.AddAttachmentData(data, "application/txt", System.IO.Path.GetFileName(filenames[0]));
+                foreach (var file in filenames)
+                {
+                    NSData data = NSData.FromFile(file);
+                mailController.AddAttachmentData(data, "application/txt", System.IO.Path.GetFileName(file));
+                
+                }
                 mailController.Finished += (object s, MFComposeResultEventArgs args) =>
                 {
                     Console.WriteLine(args.Result.ToString());

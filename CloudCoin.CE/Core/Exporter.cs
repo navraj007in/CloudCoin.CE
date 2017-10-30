@@ -609,6 +609,7 @@ namespace Founders
             }//end if file exists
 
             File.WriteAllText(filename, json);
+
             Console.Out.WriteLine("Writing to : ");
             CoreLogger.Log("Writing to : " + filename);
             Console.Out.WriteLine(filename);

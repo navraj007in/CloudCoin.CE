@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using Founders;
 using CloudCoinCore;
+using SkiaSharp;
 
 namespace Founders
 {
@@ -30,6 +31,8 @@ namespace Founders
         public string detectedFolder;
         public string receiptsFolder;
         public string lostFolder;
+        public string sentFolder;
+
 
         public static FileUtils GetInstance(String rootFolder)
         {
@@ -47,12 +50,13 @@ namespace Founders
             String partialFolder = rootFolder + "/" + Config.partialFolder + "/";
             String detectedFolder = rootFolder + "/" + Config.detectedFolder + "/";
             String recieptsFolder = rootFolder + "/" + Config.recieptsFolder + "/";
+            String sentFolder = rootFolder + "/" + Config.sentFolder + "/";
             String lostFolder = rootFolder + "/" + Config.lostFolder + "/";
 
             FileUtils fileUtils = new FileUtils(rootFolder, importFolder, importedFolder,
                                                 trashFolder, suspectFolder, frackedFolder,
                                                 bankFolder, templateFolder, counterfeitFolder,
-                                                directoryFolder, exportFolder, partialFolder, detectedFolder, recieptsFolder, lostFolder);
+                                                directoryFolder, exportFolder, partialFolder, detectedFolder, recieptsFolder, lostFolder,sentFolder);
 
             return fileUtils;
         }
@@ -61,7 +65,7 @@ namespace Founders
                           String trashFolder, String suspectFolder, String frackedFolder, 
                           String bankFolder, String templateFolder, String counterfeitFolder, 
                           String directoryFolder, String exportFolder, String partialFolder,
-                         String detectedFolder,String recieptsFolder, string lostFolder)
+                         String detectedFolder,String recieptsFolder, string lostFolder, string sentFolder)
         {
             //  initialise instance variables
             this.rootFolder = rootFolder;
@@ -79,7 +83,7 @@ namespace Founders
             this.detectedFolder = detectedFolder;
             this.receiptsFolder = recieptsFolder;
             this.lostFolder = lostFolder;
-
+            this.sentFolder = sentFolder;
         }  // End constructor
 
         public void CreateDirectoryStructure() {
@@ -100,6 +104,8 @@ namespace Founders
                 Directory.CreateDirectory(detectedFolder);
                 Directory.CreateDirectory(receiptsFolder);
                 Directory.CreateDirectory(lostFolder);
+                Directory.CreateDirectory(sentFolder);
+
             }
             catch(Exception e){
                 Console.WriteLine(e.Message);
@@ -327,6 +333,51 @@ namespace Founders
             /* WRITE THE SERIAL NUMBER ON THE JPEG */
 
             //Bitmap bitmapimage;
+
+            SKBitmap bitmapimage;
+            //using (var ms = new MemoryStream(jpegBytes))
+            {
+
+                //bitmapimage = new Bitmap(ms);
+                bitmapimage = SKBitmap.Decode(jpegBytes);
+            }
+            SKCanvas canvas = new SKCanvas(bitmapimage);
+            //Graphics graphics = Graphics.FromImage(bitmapimage);
+            //graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            //graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+            SKPaint textPaint = new SKPaint()
+            {
+                IsAntialias = true,
+                Color = SKColors.White,
+                TextSize = 14,
+                Typeface = SKTypeface.FromFamilyName("Arial")
+            };
+            //PointF drawPointAddress = new PointF(30.0F, 25.0F);
+
+            canvas.DrawText(String.Format("{0:N0}", cc.sn) + " of 16,777,216 on Network: 1", 30, 40, textPaint);
+            //graphics.DrawString(String.Format("{0:N0}", cc.sn) + " of 16,777,216 on Network: 1", new Font("Arial", 10), Brushes.White, drawPointAddress);
+
+            //ImageConverter converter = new ImageConverter();
+            //byte[] snBytes = (byte[])converter.ConvertTo(bitmapimage, typeof(byte[]));
+            SKImage image = SKImage.FromBitmap(bitmapimage);
+            SKData data = image.Encode(SKEncodedImageFormat.Jpeg, 100);
+            byte[] snBytes = data.ToArray();
+
+            List<byte> b1 = new List<byte>(snBytes);
+            List<byte> b2 = new List<byte>(ccArray);
+            b1.InsertRange(4, b2);
+
+            if (tag == "random")
+            {
+                Random r = new Random();
+                int rInt = r.Next(100000, 1000000); //for ints
+                tag = rInt.ToString();
+            }
+
+            string fileName = exportFolder + cu.fileName + tag + ".jpg";
+            File.WriteAllBytes(fileName, b1.ToArray());
+            Console.Out.WriteLine("Writing to " + fileName);
+            CoreLogger.Log("Writing to " + fileName);
             return fileSavedSuccessfully;
         }//end write JPEG
 

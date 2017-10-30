@@ -69,6 +69,7 @@ namespace CloudCoin.CE
             Directory.CreateDirectory(documents + "/Partial");
             Directory.CreateDirectory(documents + "/Imported");
             Directory.CreateDirectory(documents + "/Fracked");
+            Directory.CreateDirectory(documents + "/Sent");
 
             var directories = Directory.EnumerateDirectories(homefolder );
 
@@ -164,6 +165,13 @@ namespace CloudCoin.CE
 
             var tfilesc = Directory.GetFiles(fileUtils.exportFolder);
             foreach (var file in tfilesc)
+            {
+
+                Console.WriteLine("Export-" + file);
+            }
+
+            var tfilesce = Directory.GetFiles(fileUtils.sentFolder);
+            foreach (var file in tfilesce)
             {
 
                 Console.WriteLine("Export-" + file);
@@ -527,9 +535,9 @@ namespace CloudCoin.CE
             HelpEditor.Focused += (sender, e) => { HelpEditor.Unfocus(); };
 
         }
-        bool isJpeg = false;
+        bool isJpeg = true;
         bool isStack = true;
-        public int exportJpegStack = 2;
+        public int exportJpegStack = 1;
 
         public void export()
         {
@@ -598,6 +606,7 @@ namespace CloudCoin.CE
             
             }
 
+            emailExportFiles();
 
             // end if type jpge or stack
 
@@ -610,6 +619,18 @@ namespace CloudCoin.CE
             //MessageBox.Show("Export completed.", "Cloudcoins", MessageBoxButtons.OK);
         }// end export One
 
+        private void emailExportFiles() {
+            var tfilesc = Directory.GetFiles(fileUtils.exportFolder);
+            DependencyService.Get<Mailer>().SendMail(fileUtils.exportFolder, tfilesc);
+            foreach (var file in tfilesc)
+            {
+                File.Copy(file, fileUtils.sentFolder + Path.GetFileName(file));
+                File.Delete(file);
+                Console.Out.WriteLine(file);
+            }
+
+
+        }
         void OnTappedSafe(object sender, EventArgs e)
         {
             FrameBackground.IsVisible = true;

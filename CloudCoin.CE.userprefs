@@ -1,22 +1,28 @@
 ﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/CloudCoinPage.xaml.cs">
     <Files>
-      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="533" Column="28" />
-      <File FileName="CloudCoin.CE/MultiDetect.cs" Line="158" Column="17" />
+      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="80" Column="1" />
       <File FileName="iOS/Grader.cs" Line="22" Column="51" />
-      <File FileName="CloudCoin.CE/FileUtils.cs" Line="105" Column="45" />
+      <File FileName="CloudCoin.CE/FileUtils.cs" Line="108" Column="53" />
       <File FileName="shareExtension/ShareViewController.cs" Line="39" Column="13" />
       <File FileName="CloudCoin.CE/Views/RAIDAPage.xaml.cs" Line="16" Column="35" />
       <File FileName="CloudCoin.CE/CloudCoinPage.xaml" Line="306" Column="59" />
-      <File FileName="CloudCoin.CE/Core/Exporter.cs" Line="154" Column="64" />
-      <File FileName="iOS/Mail.cs" Line="51" Column="13" />
-      <File FileName="CloudCoin.CE/Interface/Mailer.cs" Line="6" Column="46" />
+      <File FileName="CloudCoin.CE/Core/Exporter.cs" Line="612" Column="13" />
+      <File FileName="iOS/Mail.cs" Line="42" Column="106" />
+      <File FileName="CloudCoin.CE/Interface/Mailer.cs" Line="6" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/ShareViewController.cs" relfile="shareExtension/ShareViewController.cs" line="41" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/ShareViewController.cs" relfile="shareExtension/ShareViewController.cs" line="41" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="55" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="96" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="94" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="95" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="633" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/FileUtils.cs" relfile="CloudCoin.CE/FileUtils.cs" line="284" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/FileUtils.cs" relfile="CloudCoin.CE/FileUtils.cs" line="297" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.CloudCoinCE PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.2c8a2560af951c706a64ea724e3c4c62ddc6f7f6" identitySerialNumber="1433F0AFCB507A87">

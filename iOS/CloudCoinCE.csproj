@@ -116,6 +116,9 @@
     <Reference Include="ELCImagePicker">
       <HintPath>..\Components\elcimagepicker-1.4\lib\ios-unified\ELCImagePicker.dll</HintPath>
     </Reference>
+    <Reference Include="SkiaSharp">
+      <HintPath>..\packages\SkiaSharp.1.59.2\lib\XamariniOS\SkiaSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
