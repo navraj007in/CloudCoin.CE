@@ -65,6 +65,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Core\Banker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Core\Exporter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interface\Mailer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FileData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FilePickerEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\AboutPage.xaml" />

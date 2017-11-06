@@ -7,11 +7,11 @@ using UIKit;
 using ELCImagePicker;
 using System.Collections.Generic;
 
-[assembly: Dependency(typeof(FilePicker))]
+//[assembly: Dependency(typeof(FilePicker))]
 
 namespace CloudCoin.CE.iOS
 {
-    public class FilePicker :IFilePicker
+    public class FilePicker// : IFilePicker
     {
         public FilePicker()
         {

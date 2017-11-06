@@ -4,6 +4,7 @@ using System.Linq;
 
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using Xamarin.Forms;
 
 namespace Founders
 {
@@ -15,6 +16,7 @@ namespace Founders
         //public RichTextBox txtLogs;
 
         public int totalImported = 0;
+        public ProgressBar importBar;
 
         /*  CONSTRUCTOR */
         public MultiDetect(FileUtils fileUtils)
@@ -109,7 +111,10 @@ namespace Founders
                         // receipt.rd[i] = detail;
 
                         //updateLog("  Now scanning coin " + (i + 1) + " of " + suspectFileNames.Length + " for counterfeit. SN " + string.Format("{0:n0}", cloudCoin[i].sn) + ", Denomination: " + cu[i].getDenomination());
+                        Device.BeginInvokeOnMainThread(()=>{
+                            importBar.Progress = (i*100 /coinNames);
 
+                        });
                         updateLog("Authenticating a " + cu[i].getDenomination() +
                             " CoinCoin note (" + cloudCoin[i].sn + "): " + (i + 1) + " of " + coinNames);
                     }

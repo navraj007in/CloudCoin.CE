@@ -144,5 +144,15 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We are using your photo</string>
+	<key>NSUbiquitousContainers</key>
+	<dict>
+		<key>iCloud.com.cloudcoin</key>
+		<dict>
+			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
+			<true/>
+			<key>NSUbiquitousContainerSupportedFolderLevels</key>
+			<string>one</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

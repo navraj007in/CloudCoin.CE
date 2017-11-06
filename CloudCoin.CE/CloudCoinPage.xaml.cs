@@ -46,10 +46,12 @@ namespace CloudCoin.CE
             else
                 fileUtils = FileUtils.GetInstance(homefolder);
             InitializeComponent();
-            if(Device.RuntimePlatform == Device.iOS)
-                listFiles();
 
             fileUtils.CreateDirectoryStructure();
+
+            if (Device.RuntimePlatform == Device.iOS)
+                listFiles();//commented by srajan 
+
             Title = "CloudCoin CE ver 1.0";
             Task.Run(() => {
                 echoRaida();
@@ -115,16 +117,16 @@ namespace CloudCoin.CE
 
         }
         public void listFiles() {
-            var files = Directory.GetFiles("CloudCoin/Import");
+            var files = Directory.GetFiles(fileUtils.importFolder);
             foreach (var file in files)
             {
                 
                 Console.WriteLine( file);
-                if (File.Exists(fileUtils.importFolder  + Path.GetFileName(file)))
-                    File.Delete(fileUtils.importFolder  + Path.GetFileName(file));
+                //if (File.Exists(fileUtils.importFolder  + Path.GetFileName(file)))
+                  //  File.Delete(fileUtils.importFolder  + Path.GetFileName(file));
                 
-                File.Copy(file, fileUtils.importFolder + Path.GetFileName(file));
-                Console.WriteLine("File Copied succesfully to " + fileUtils.importFolder + Path.GetFileName(file));
+                //File.Copy(file, fileUtils.importFolder + Path.GetFileName(file));
+                //Console.WriteLine("File Copied succesfully to " + fileUtils.importFolder + Path.GetFileName(file));
            
             }
 
@@ -177,12 +179,27 @@ namespace CloudCoin.CE
                 Console.WriteLine("Export-" + file);
             }
 
+            var tfilescep = Directory.GetFiles(fileUtils.bankFolder);
+            foreach (var file in tfilescep)
+            {
+
+                Console.WriteLine("Partial-" + file);
+            }
+
+            var trfilescep = Directory.GetFiles(fileUtils.trashFolder);
+            foreach (var file in trfilescep)
+            {
+
+                Console.WriteLine("Trash-" + file);
+            }
+
         }
         public void multi_detect()
         {
             Console.Out.WriteLine("");
             Console.Out.WriteLine("  Detecting Authentication of Suspect Coins");// "Detecting Authentication of Suspect Coins");
             MultiDetect multi_detector = new MultiDetect(fileUtils);
+            multi_detector.importBar = importbar;
             //multi_detector.txtLogs = txtLogs;
 
             //Calculate timeout
@@ -283,7 +300,18 @@ namespace CloudCoin.CE
                 RAIDA_Status.showMultiMs();
                 showCoins();
         
-            }//end if coins to import
+            }
+
+            FrameBackground.IsVisible = false;
+                FrameImportAction.IsVisible = false;
+   
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                //indicator.IsVisible = false;
+
+            });
+          
+            //end if coins to import
         }   // end import
 
         void Handle_Clicked(object sender, System.EventArgs e)
@@ -563,7 +591,6 @@ namespace CloudCoin.CE
 
             if (exp_1 + exp_5 + exp_25 + exp_100 + exp_250 == 0)
             {
-                Console.WriteLine("Can not export 0 Coins.");
                 Console.WriteLine("Can not export 0 coins");
                 return;
             }
@@ -636,8 +663,39 @@ namespace CloudCoin.CE
             FrameBackground.IsVisible = true;
             FrameSafeAction.IsVisible = true;
         }
-        void OnTappedImport(object sender, EventArgs e)
+        async void OnTappedImport(object sender, EventArgs e)
         {
+
+
+            try
+            {
+                var iFilePicker = DependencyService.Get<IFilePicker>();
+                FileData filedata = await iFilePicker.PickFile(fileUtils.importFolder);
+
+                //indicator.IsVisible = true;
+
+
+                if (filedata !=null){
+                    ActivityIndicator ai = new ActivityIndicator();
+                    ai.IsRunning = true;
+                    ai.IsEnabled = true;
+                    ai.BindingContext = this;
+                    ai.SetBinding(ActivityIndicator.IsVisibleProperty, "IsBusy");
+                    import();
+                    ai.IsRunning = false;
+                    ai.IsEnabled = true;
+                }
+                    
+
+              
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Debug.WriteLine(ex);
+            }
+
             int totalRAIDABad = 0;
             for (int i = 0; i < 25; i++)
             {

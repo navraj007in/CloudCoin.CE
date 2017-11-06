@@ -200,12 +200,13 @@
     <Compile Include="Grader.cs" />
     <Compile Include="FixitHelper.cs" />
     <Compile Include="Mail.cs" />
+    <Compile Include="FilePickerImplementation.cs" />
+    <Compile Include="GenericTextDocument.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <None Include="packages.config" />
-    <None Include="Import\238000.CloudCoin.b37m2_15457896.stack" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />

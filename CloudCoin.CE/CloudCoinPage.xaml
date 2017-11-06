@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CloudCoin.CE.CloudCoinPage" BackgroundColor="#348EFB">
-	<AbsoluteLayout Margin="0,24,0,0">
+
+
+ 
+
+
+
+
+    <AbsoluteLayout Margin="0,24,0,0">
+
+
+       
+ 
             
             <Image Source="logo" AbsoluteLayout.LayoutBounds=".5,6,119,18"
                 AbsoluteLayout.LayoutFlags="XProportional" />
@@ -76,7 +87,7 @@
 
                     <Label  TextColor= "#383F44" AbsoluteLayout.LayoutBounds="0,0,1,0.3" Text = "Import Coins" VerticalTextAlignment = "Center" FontSize = "19" 
                 HorizontalTextAlignment ="Center" AbsoluteLayout.LayoutFlags="All" Margin="0,10,0,0"/>
-                         
+                         <ProgressBar x:Name="importbar" AbsoluteLayout.LayoutBounds="0,0.4,1,0.5" AbsoluteLayout.LayoutFlags="All" Margin="5,0,5,0"/>
                         <Label  TextColor ="#7A8694"  AbsoluteLayout.LayoutBounds= "0,0.4,1,0.5" Text = "You have 10 files in your import directory" VerticalTextAlignment = "Center"
                 HorizontalTextAlignment ="Center" FontSize = "13"
                 AbsoluteLayout.LayoutFlags="All" Margin="5,0,5,0" />
@@ -351,8 +362,8 @@ Scan and Safe Support: gitinsky@protonmail.com" FontSize="12"  />
                     </AbsoluteLayout>
                 </Frame>
 
-
+                <ActivityIndicator x:Name="indicator"  WidthRequest="500" HeightRequest="300" IsRunning="True" IsVisible="false" Color="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
         </AbsoluteLayout>
 
-    
+ 
 </ContentPage>
