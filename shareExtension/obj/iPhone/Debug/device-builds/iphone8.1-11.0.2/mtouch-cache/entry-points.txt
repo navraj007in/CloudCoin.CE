@@ -1,7 +1,7 @@
 Function=xamarin_timezone_get_data
-	/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-cache/Link/mscorlib.dll
+	/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-cache/Link/mscorlib.dll
 Function=xamarin_log
-	/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-cache/Link/mscorlib.dll
+	/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-cache/Link/mscorlib.dll
 Function=xamarin_get_block_descriptor
-	/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-cache/Link/Xamarin.iOS.dll
+	/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-cache/Link/Xamarin.iOS.dll
 Function=mono_pmip

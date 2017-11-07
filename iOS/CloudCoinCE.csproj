@@ -113,11 +113,11 @@
     <Reference Include="Xamarin.Forms.Maps.iOS">
       <HintPath>..\packages\Xamarin.Forms.Maps.2.4.0.282\lib\Xamarin.iOS10\Xamarin.Forms.Maps.iOS.dll</HintPath>
     </Reference>
-    <Reference Include="ELCImagePicker">
-      <HintPath>..\Components\elcimagepicker-1.4\lib\ios-unified\ELCImagePicker.dll</HintPath>
-    </Reference>
     <Reference Include="SkiaSharp">
       <HintPath>..\packages\SkiaSharp.1.59.2\lib\XamariniOS\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ELCImagePicker">
+      <HintPath>..\Components\elcimagepicker-1.4\lib\ios-unified\ELCImagePicker.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

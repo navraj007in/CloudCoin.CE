@@ -1,9 +1,9 @@
 # Version: 11.2.0.0 (d15-4-xi: 12e80e01)
 # [first argument, ignore] # --cache
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.2.1.0/lib/mtouch/mtouch.exe \
-	/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-cache \
+	/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-cache \
 	--dev \
-	/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/bin/iPhone/Debug/device-builds/iphone8.1-11.0.2/shareExtension.appex \
+	/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/bin/iPhone/Debug/device-builds/iphone8.1-11.0.2/shareExtension.appex \
 	--executable \
 	shareExtension \
 	--extension \
@@ -13,14 +13,14 @@
 	--sdkroot \
 	/Applications/Xcode.app/Contents/Developer \
 	--sdk \
-	11.0 \
+	11.1 \
 	--targetver \
 	11.0 \
 	--aot-options=-O=float32 \
 	--http-message-handler=HttpClientHandler \
 	--abi=arm64 \
 	--symbollist \
-	/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-symbols.list \
+	/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/obj/iPhone/Debug/device-builds/iphone8.1-11.0.2/mtouch-symbols.list \
 	--dsym=no \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
@@ -34,4 +34,4 @@
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
 	--target-framework \
 	'Xamarin.iOS,v1.0' \
-	/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/bin/iPhone/Debug/shareExtension.dll \
+	/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/bin/iPhone/Debug/shareExtension.dll \

@@ -1,4 +1,4 @@
-/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/bin/iPhone/Debug/shareExtension.dll
+/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/bin/iPhone/Debug/shareExtension.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.2.1.0/lib/mono/Xamarin.iOS/mscorlib.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.2.1.0/lib/mono/Xamarin.iOS/../../64bits/Xamarin.iOS.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.2.1.0/lib/mono/Xamarin.iOS/System.dll

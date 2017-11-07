@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip shareExtension_ShareViewController__ctor_intptr
 shareExtension_ShareViewController__ctor_intptr:
-.file 1 "/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/ShareViewController.cs"
+.file 1 "/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/ShareViewController.cs"
 .loc 1 10 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -529,7 +529,7 @@ Lme_5:
 	.align 4
 	.no_dead_strip shareExtension_ShareViewController_ReleaseDesignerOutlets
 shareExtension_ShareViewController_ReleaseDesignerOutlets:
-.file 2 "/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/ShareViewController.designer.cs"
+.file 2 "/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/ShareViewController.designer.cs"
 .loc 2 15 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -674,7 +674,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "343265B9-B164-4A4F-9643-631EE8935BCB"
+	.asciz "D2BF0A35-A93C-4F3B-A928-0B728F35E1D8"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -757,7 +757,7 @@ _mono_aot_file_info:
 	.long 32,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 200,173,149,103,58,92,140,238,146,156,252,133,67,216,191,187
+	.byte 73,143,187,6,96,110,219,70,148,16,227,55,48,104,237,239
 	.globl _mono_aot_module_shareExtension_info
 	.align 3
 _mono_aot_module_shareExtension_info:

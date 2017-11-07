@@ -21,17 +21,17 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/ShareViewController.cs" relfile="shareExtension/ShareViewController.cs" line="41" column="1" />
-      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="55" column="1" />
-      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="96" column="1" />
-      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="94" column="1" />
-      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="95" column="1" />
-      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="633" column="1" />
-      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/FileUtils.cs" relfile="CloudCoin.CE/FileUtils.cs" line="283" column="1" />
-      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/FileUtils.cs" relfile="CloudCoin.CE/FileUtils.cs" line="296" column="1" />
-      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/iOS/FilePickerImplementation.cs" relfile="iOS/FilePickerImplementation.cs" line="152" column="1" />
-      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/iOS/FilePickerImplementation.cs" relfile="iOS/FilePickerImplementation.cs" line="165" column="1" />
-      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/MultiDetect.cs" relfile="CloudCoin.CE/MultiDetect.cs" line="139" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/ShareViewController.cs" relfile="shareExtension/ShareViewController.cs" line="41" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/ccce/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="55" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/ccce/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="96" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/ccce/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="94" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/ccce/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="95" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/ccce/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="633" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/ccce/CloudCoin.CE/CloudCoin.CE/FileUtils.cs" relfile="CloudCoin.CE/FileUtils.cs" line="283" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/ccce/CloudCoin.CE/CloudCoin.CE/FileUtils.cs" relfile="CloudCoin.CE/FileUtils.cs" line="296" column="1" />
+      <Breakpoint file="/Users/navrajsingh/ccce/CloudCoin.CE/iOS/FilePickerImplementation.cs" relfile="iOS/FilePickerImplementation.cs" line="152" column="1" />
+      <Breakpoint file="/Users/navrajsingh/ccce/CloudCoin.CE/iOS/FilePickerImplementation.cs" relfile="iOS/FilePickerImplementation.cs" line="165" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/ccce/CloudCoin.CE/CloudCoin.CE/MultiDetect.cs" relfile="CloudCoin.CE/MultiDetect.cs" line="139" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.CloudCoinCE PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4CE1E3E-6989-4B4B-95D9-60F89A505AC3" identitySerialNumber="1433F0AFCB507A87">
