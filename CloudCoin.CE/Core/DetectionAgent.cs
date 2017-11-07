@@ -62,6 +62,8 @@ namespace Founders
 
 		public async Task<Response[]> multiDetect(int[] nn, int[] sn, String[] an, String[] pan, int[] d, int timeout)
 		{
+            timeout = 240000;
+
 			/*PREPARE REQUEST*/
 			Response[] response = new Response[nn.Length];
 			for (int i = 0; i < nn.Length; i++)
@@ -112,11 +114,14 @@ namespace Founders
 					if (json.IsSuccessStatusCode)//200 status good
 					{
 						totalResponse = await json.Content.ReadAsStringAsync();
+                        Console.WriteLine("Block 1----");
 						//Console.Out.WriteLine("RAIDA " + RAIDANumber + " returned good: " + json.StatusCode);
 						//  Console.Out.WriteLine(totalResponse);
 					}
 					else //404 not found or 500 error. 
 					{
+                        Console.WriteLine("Block 1----");
+            
 						//Console.Out.WriteLine("RAIDA " + RAIDANumber + " had an error: " + json.StatusCode);
 						after = DateTime.Now;
 						ts = after.Subtract(before);//Start the timer

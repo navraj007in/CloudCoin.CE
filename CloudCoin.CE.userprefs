@@ -1,21 +1,24 @@
-﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/FilePickerImplementation.cs">
+﻿<Properties StartupConfiguration="{B2417C84-E981-4734-9936-B92B2A51F84F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/CloudCoinPage.xaml.cs">
     <Files>
-      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="670" Column="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="28" Column="26" />
-      <File FileName="CloudCoin.CE/CloudCoinPage.xaml" Line="365" Column="93" />
-      <File FileName="iOS/FilePickerImplementation.cs" Line="313" Column="31" />
-      <File FileName="CloudCoin.CE/Importer.cs" Line="22" Column="9" />
-      <File FileName="CloudCoin.CE/FileUtils.cs" Line="12" Column="1" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="iOS/GenericTextDocument.cs" Line="15" Column="24" />
-      <File FileName="CloudCoin.CE/Core/Config.cs" Line="10" Column="47" />
-      <File FileName="Droid/FilePicker.cs" Line="10" Column="34" />
-      <File FileName="shareExtension/ShareViewController.cs" Line="41" Column="1" />
-      <File FileName="CloudCoin.CE/Core/Exporter.cs" Line="55" Column="1" />
+      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="37" Column="65" />
+      <File FileName="CloudCoin.CE/CloudCoinPage.xaml" Line="370" Column="1" />
+      <File FileName="CloudCoin.CE/Importer.cs" Line="51" Column="1" />
+      <File FileName="CloudCoin.CE/MultiDetect.cs" Line="139" Column="1" />
+      <File FileName="CloudCoin.CE/Core/RAIDA.cs" Line="264" Column="13" />
+      <File FileName="CloudCoin.CE/CoinUtils.cs" Line="86" Column="33" />
+      <File FileName="CloudCoin.CE/Detector.cs" Line="13" Column="35" />
+      <File FileName="CloudCoin.CE/Core/DetectionAgent.cs" Line="111" Column="1" />
+      <File FileName="iOS/Info.plist" />
+      <File FileName="Droid/FilePickerImplementationn.cs" Line="23" Column="18" />
+      <File FileName="Droid/IOUtil.cs" Line="16" Column="28" />
+      <File FileName="CloudCoin.CE/Interface/Mailer.cs" Line="6" Column="17" />
+      <File FileName="iOS/Mail.cs" Line="25" Column="49" />
+      <File FileName="iOS/FilePicker.cs" Line="1" Column="1" />
+      <File FileName="iOS/FilePickerImplementation.cs" Line="429" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/shareExtension/ShareViewController.cs" relfile="shareExtension/ShareViewController.cs" line="41" column="1" />
@@ -26,18 +29,18 @@
       <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Core/Exporter.cs" relfile="CloudCoin.CE/Core/Exporter.cs" line="633" column="1" />
       <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/FileUtils.cs" relfile="CloudCoin.CE/FileUtils.cs" line="283" column="1" />
       <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/FileUtils.cs" relfile="CloudCoin.CE/FileUtils.cs" line="296" column="1" />
-      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/iOS/FilePickerImplementation.cs" relfile="iOS/FilePickerImplementation.cs" line="151" column="1" />
-      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/iOS/FilePickerImplementation.cs" relfile="iOS/FilePickerImplementation.cs" line="164" column="1" />
-      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/CloudCoinPage.xaml.cs" relfile="CloudCoin.CE/CloudCoinPage.xaml.cs" line="670" column="23" />
-      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/Importer.cs" relfile="CloudCoin.CE/Importer.cs" line="30" column="1" />
-      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/iOS/FilePickerImplementation.cs" relfile="iOS/FilePickerImplementation.cs" line="93" column="1" />
+      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/iOS/FilePickerImplementation.cs" relfile="iOS/FilePickerImplementation.cs" line="152" column="1" />
+      <Breakpoint file="/Users/navrajsingh/Projects/CloudCoin.CE/iOS/FilePickerImplementation.cs" relfile="iOS/FilePickerImplementation.cs" line="165" column="1" />
+      <Breakpoint enabled="false" file="/Users/navrajsingh/Projects/CloudCoin.CE/CloudCoin.CE/MultiDetect.cs" relfile="CloudCoin.CE/MultiDetect.cs" line="139" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.CloudCoinCE PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.2c8a2560af951c706a64ea724e3c4c62ddc6f7f6" identitySerialNumber="1433F0AFCB507A87">
+  <MonoDevelop.Ide.ItemProperties.CloudCoinCE PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4CE1E3E-6989-4B4B-95D9-60F89A505AC3" identitySerialNumber="1433F0AFCB507A87">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="62UR93U2G9" TeamId="9M3DA6YP8B" />
   </MonoDevelop.Ide.ItemProperties.CloudCoinCE>
   <MonoDevelop.Ide.ItemProperties.CloudCoin.CE.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="CloudCoin.CE/CloudCoinPage.xaml.cs" line="161" offsetX="573" offsetY="2400" expression="filesim[0]" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.ItemProperties.shareExtension identitySerialNumber="5E60CEAD48373102">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="62UR93U2G9" TeamId="9M3DA6YP8B" />
   </MonoDevelop.Ide.ItemProperties.shareExtension>

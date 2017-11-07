@@ -10,6 +10,7 @@ using System.Diagnostics;
 using Xamarin.Forms;
 using CloudCoin.CE.iOS;
 using System.Net;
+using Xamarin.Forms.PlatformConfiguration;
 
 [assembly: Dependency(typeof(FilePickerImplementation))]
 namespace CloudCoin.CE.iOS
@@ -421,6 +422,11 @@ namespace CloudCoin.CE.iOS
                 await SaveFile(fileToOpen);
                 OpenFile(fileToOpen);
             }
+        }
+
+        public string GetHomeFolder()
+        {
+            return Android.OS.Environment.ExternalStorageDirectory.ToString() + "/CloudCoin";
         }
     }
 }

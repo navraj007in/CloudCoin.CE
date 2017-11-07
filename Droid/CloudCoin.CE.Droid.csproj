@@ -107,6 +107,9 @@
     <Reference Include="Xamarin.Forms.Maps">
       <HintPath>..\packages\Xamarin.Forms.Maps.2.4.0.282\lib\MonoAndroid10\Xamarin.Forms.Maps.dll</HintPath>
     </Reference>
+    <Reference Include="SkiaSharp">
+      <HintPath>..\packages\SkiaSharp.1.59.2\lib\MonoAndroid\SkiaSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AboutAssets.txt" />
@@ -120,6 +123,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="FilePicker.cs" />
     <Compile Include="Grader.cs" />
+    <Compile Include="FilePickerImplementationn.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -130,6 +134,28 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable\backicons.png" />
+    <AndroidResource Include="Resources\drawable\bankbtn.png" />
+    <AndroidResource Include="Resources\drawable\close128.png" />
+    <AndroidResource Include="Resources\drawable\cloudcoin87.png" />
+    <AndroidResource Include="Resources\drawable\cloudcoin360.png" />
+    <AndroidResource Include="Resources\drawable\CloudCoinLogoRound.png" />
+    <AndroidResource Include="Resources\drawable\CloudCoinLogoRound80.png" />
+    <AndroidResource Include="Resources\drawable\CloudCoinLogoRound96.png" />
+    <AndroidResource Include="Resources\drawable\exportbtn.png" />
+    <AndroidResource Include="Resources\drawable\importbtn.png" />
+    <AndroidResource Include="Resources\drawable\jpeg1.jpg" />
+    <AndroidResource Include="Resources\drawable\jpeg5.jpg" />
+    <AndroidResource Include="Resources\drawable\jpeg25.jpg" />
+    <AndroidResource Include="Resources\drawable\jpeg100.jpg" />
+    <AndroidResource Include="Resources\drawable\jpeg250.jpg" />
+    <AndroidResource Include="Resources\drawable\logo.png" />
+    <AndroidResource Include="Resources\drawable\questionmark.png" />
+    <AndroidResource Include="Resources\drawable\safebtn.png" />
+    <AndroidResource Include="Resources\drawable\settings.png" />
+    <AndroidResource Include="Resources\drawable\tab_about.png" />
+    <AndroidResource Include="Resources\drawable\tab_feed.png" />
+    <AndroidResource Include="Resources\drawable\worldmap.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CloudCoin\" />

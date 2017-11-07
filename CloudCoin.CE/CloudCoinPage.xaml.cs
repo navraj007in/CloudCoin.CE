@@ -32,7 +32,12 @@ namespace CloudCoin.CE
         public CloudCoinPage()
         {
             var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            homefolder = documents + "/CloudCoin";
+            if(Device.RuntimePlatform == Device.Android) 
+            {
+                homefolder = Android.OS.Environment.ExternalStorageDirectory.ToString() + "/CloudCoin";
+            }
+            else 
+                homefolder = documents + "/CloudCoin";
             try
             {
                 Directory.CreateDirectory(homefolder);
@@ -55,6 +60,7 @@ namespace CloudCoin.CE
             Title = "CloudCoin CE ver 1.0";
             Task.Run(() => {
                 echoRaida();
+                import();
             });
 
             //var directories = Directory.EnumerateDirectories("./");
@@ -73,13 +79,19 @@ namespace CloudCoin.CE
             Directory.CreateDirectory(documents + "/Fracked");
             Directory.CreateDirectory(documents + "/Sent");
 
-            var directories = Directory.EnumerateDirectories(homefolder );
+            try {
+                var directories = Directory.EnumerateDirectories(homefolder );
 
             //Directory.CreateDirectory("./cBank");
 
             foreach (var directory in directories)
             {
-                Console.WriteLine(directory);
+                //Console.WriteLine(directory);
+            }
+      
+            }
+            catch(Exception e) {
+                Console.Write(e.Message);
             }
             showCoins();
             updateExportTotal();
@@ -117,82 +129,40 @@ namespace CloudCoin.CE
 
         }
         public void listFiles() {
-            var files = Directory.GetFiles(fileUtils.importFolder);
-            foreach (var file in files)
-            {
-                
-                Console.WriteLine( file);
-                //if (File.Exists(fileUtils.importFolder  + Path.GetFileName(file)))
-                  //  File.Delete(fileUtils.importFolder  + Path.GetFileName(file));
-                
-                //File.Copy(file, fileUtils.importFolder + Path.GetFileName(file));
-                //Console.WriteLine("File Copied succesfully to " + fileUtils.importFolder + Path.GetFileName(file));
-           
-            }
+            
 
             var tempfiles = Directory.GetFiles("CloudCoin/Templates");
             foreach (var file in tempfiles)
             {
 
-                Console.WriteLine(file);
+                //Console.WriteLine(file);
                 if (File.Exists(fileUtils.templateFolder + Path.GetFileName(file)))
                     File.Delete(fileUtils.templateFolder + Path.GetFileName(file));
 
                 File.Copy(file, fileUtils.templateFolder + Path.GetFileName(file));
-                Console.WriteLine("File Copied succesfully to " + fileUtils.templateFolder + Path.GetFileName(file));
+                //Console.WriteLine("File Copied succesfully to " + fileUtils.templateFolder + Path.GetFileName(file));
 
             }
 
 
-            var files2 = Directory.GetFiles(fileUtils.suspectFolder);
-            foreach (var file in files2)
-            {
-                Console.WriteLine("Target-"+file);
-                File.Delete(file);
 
-            }
 
-            var filesc = Directory.GetFiles(fileUtils.counterfeitFolder);
-            foreach (var file in filesc)
-            {
+            //listDirContents(fileUtils.templateFolder, "Templates");
+            listDirContents(fileUtils.importFolder, "Import");
+            listDirContents(fileUtils.bankFolder, "Bank");
+            listDirContents(fileUtils.frackedFolder, "Fracked");
+            listDirContents(fileUtils.suspectFolder, "Suspect");
+            listDirContents(fileUtils.detectedFolder, "Detect-");
 
-                Console.WriteLine("Counterfeit-"+file);
-            }
-            var filesim = Directory.GetFiles(fileUtils.importedFolder);
-            foreach (var file in filesim)
-            {
+        }
 
-                Console.WriteLine("Imported-" + file);
-            }
-
-            var tfilesc = Directory.GetFiles(fileUtils.exportFolder);
-            foreach (var file in tfilesc)
-            {
-
-                Console.WriteLine("Export-" + file);
-            }
-
-            var tfilesce = Directory.GetFiles(fileUtils.sentFolder);
-            foreach (var file in tfilesce)
-            {
-
-                Console.WriteLine("Export-" + file);
-            }
-
-            var tfilescep = Directory.GetFiles(fileUtils.bankFolder);
-            foreach (var file in tfilescep)
-            {
-
-                Console.WriteLine("Partial-" + file);
-            }
-
-            var trfilescep = Directory.GetFiles(fileUtils.trashFolder);
+        public void listDirContents(string folderName,string label) {
+            var trfilescep = Directory.GetFiles(folderName);
             foreach (var file in trfilescep)
             {
 
-                Console.WriteLine("Trash-" + file);
+                Console.WriteLine(label + "-" + file);
             }
-
         }
         public void multi_detect()
         {
@@ -203,7 +173,7 @@ namespace CloudCoin.CE
             //multi_detector.txtLogs = txtLogs;
 
             //Calculate timeout
-            int detectTime = 20000;
+            int detectTime = 60000;
             if (RAIDA_Status.getLowest21() > detectTime)
             {
                 detectTime = RAIDA_Status.getLowest21() + 200;
@@ -324,9 +294,11 @@ namespace CloudCoin.CE
                 Console.WriteLine(fi.FullName);
             }
             Console.WriteLine("Length " + count);
+            //import();
+
             Task.Run(() => {
                 import();
-
+               // listFiles();
             });
 
 
@@ -340,10 +312,11 @@ namespace CloudCoin.CE
         public void showCoins()
         {
 
-            Console.Out.WriteLine("");
+            try {
+                Console.Out.WriteLine("");
             // This is for consol apps.
             Banker bank = new Banker(fileUtils);
-            bankTotals = bank.countCoins(fileUtils.counterfeitFolder);
+            bankTotals = bank.countCoins(fileUtils.bankFolder);
             frackedTotals = bank.countCoins(fileUtils.frackedFolder);
             partialTotals = bank.countCoins(fileUtils.partialFolder);
 
@@ -357,6 +330,11 @@ namespace CloudCoin.CE
             lblExportTotal.Text = Convert.ToString(bankTotals[0] + frackedTotals[0] + partialTotals[0]);
 
             fillPickers(lblOneCount.Text, lblFiveCount.Text,lblQtrCount.Text,lblHundredCount.Text,lblTwoFiftyCount.Text);
+      
+            }
+            catch(Exception e) {
+                Console.WriteLine(e.Message);
+            }
             // int[] counterfeitTotals = bank.countCoins( counterfeitFolder );
 
             //setLabelText(lblOnesCount, Convert.ToString(bankTotals[1] + frackedTotals[1] + partialTotals[1]));
@@ -556,9 +534,11 @@ namespace CloudCoin.CE
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            FrameExpoart.CornerRadius = (float)FrameExpoart.Height / 2;
-            FrameImpoart.CornerRadius = (float)FrameImpoart.Height / 2;
-            FrameSafe.CornerRadius = (float)FrameSafe.Height / 2;
+            if (Device.RuntimePlatform == Device.iOS) { 
+            //FrameExpoart.CornerRadius = (float)FrameExpoart.Height / 2;
+            //FrameImpoart.CornerRadius = (float)FrameImpoart.Height / 2;
+            //FrameSafe.CornerRadius = (float)FrameSafe.Height / 2;
+            }
 
             HelpEditor.Focused += (sender, e) => { HelpEditor.Unfocus(); };
 
@@ -666,7 +646,10 @@ namespace CloudCoin.CE
         async void OnTappedImport(object sender, EventArgs e)
         {
 
-
+            if(Device.RuntimePlatform == Device.Android)
+            {
+                import();
+            }
             try
             {
                 var iFilePicker = DependencyService.Get<IFilePicker>();
@@ -704,6 +687,7 @@ namespace CloudCoin.CE
                     totalRAIDABad += 1;
                 }
             }
+
             if (totalRAIDABad > 8)
             {
                 Console.ForegroundColor = ConsoleColor.Red;

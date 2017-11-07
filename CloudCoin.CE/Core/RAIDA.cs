@@ -113,8 +113,8 @@ namespace Founders
 
 		public CoinUtils[] detectMultiCoin(CoinUtils[] cu, int milliSecondsToTimeOut)
 		{
-			//Make arrays to stripe the coins
-
+            //Make arrays to stripe the coins
+            milliSecondsToTimeOut = 60000;
 			responseArrayMulti = new Response[25, cu.Length];
 
 			int[] nns = new int[cu.Length];
@@ -272,6 +272,7 @@ namespace Founders
 					if (responseArrayMulti[j, i] != null)
 					{
 						cu[i].setPastStatus(responseArrayMulti[j, i].outcome, j);
+                        Console.WriteLine(cu[i].cc.sn + " detect:" + j + " " + responseArrayMulti[j, i].fullResponse);
 						CoreLogger.Log(cu[i].cc.sn + " detect:" + j + " " + responseArrayMulti[j, i].fullResponse);
 					}
 					else

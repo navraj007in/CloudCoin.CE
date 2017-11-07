@@ -21,7 +21,7 @@ Ldebug_info_begin:
 	.short 2
 	.long 0
 	.byte 8,1
-	.asciz "Mono AOT Compiler 5.2.0 (tarball Thu Oct  5 20:37:59 EDT 2017)"
+	.asciz "Mono AOT Compiler 5.2.0 (tarball Fri Oct 13 11:35:44 EDT 2017)"
 	.asciz "shareExtension.dll"
 	.asciz ""
 
@@ -674,7 +674,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "17A7AA5B-B1AB-412B-81CB-645318863259"
+	.asciz "343265B9-B164-4A4F-9643-631EE8935BCB"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -757,7 +757,7 @@ _mono_aot_file_info:
 	.long 32,0,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0
-	.byte 167,98,114,91,185,11,142,69,245,69,73,205,186,117,169,69
+	.byte 130,100,214,218,217,235,153,175,96,134,159,195,224,180,188,54
 	.globl _mono_aot_module_shareExtension_info
 	.align 3
 _mono_aot_module_shareExtension_info:

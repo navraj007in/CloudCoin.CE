@@ -10,7 +10,7 @@ namespace Founders
         /*  INSTANCE VARIABLES */
         public RAIDA raida;
         public FileUtils fileUtils;
-        public int detectTime = 5000;
+        public int detectTime = 60000;
         //public RichTextBox txtLogs;
         public int totalImported = 0;
 

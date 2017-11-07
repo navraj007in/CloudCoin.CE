@@ -19,6 +19,12 @@ namespace CloudCoin.CE.iOS
         public Mail()
         {
         }
+
+        public string GetHomeFolder()
+        {
+            return Android.OS.Environment.ExternalStorageDirectory.ToString() + "/CloudCoin";
+        }
+
         public void SendMail(string folder, string[] filenames) {
 
             var title = new UILabel(new RectangleF(-110, 80, 320, 30));
