@@ -4,6 +4,7 @@ using System.Linq;
 
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Founders
@@ -27,7 +28,7 @@ namespace Founders
 
 
 
-        public int detectMulti(int detectTime)
+        public async Task<int> detectMulti(int detectTime)
         {
             bool stillHaveSuspect = true;
             int coinNames = 0;
@@ -135,7 +136,7 @@ namespace Founders
 
                 //ALL COINS IN THE ARRAY, NOW DETECT
 
-                CoinUtils[] detectedCC = raida.detectMultiCoin(cu, detectTime);
+                CoinUtils[] detectedCC = await raida.detectMultiCoin(cu, detectTime);
                 var bankCoins = detectedCC.Where(o => o.folder == CoinUtils.Folder.Bank);
                 var frackedCoins = detectedCC.Where(o => o.folder == CoinUtils.Folder.Fracked);
                 var counterfeitCoins = detectedCC.Where(o => o.folder == CoinUtils.Folder.Counterfeit);
