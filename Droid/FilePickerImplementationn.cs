@@ -27,6 +27,11 @@ namespace CloudCoin.CE.Droid
     [Preserve(AllMembers = true)]
     public class FilePickerImplementation : IFilePicker
     {
+        public string GetHomeFolder()
+        {
+            return null;
+        }
+
         public Task<FileData> PickFile(string importFilePath)
         {
             return null;

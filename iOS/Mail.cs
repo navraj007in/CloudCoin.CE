@@ -22,7 +22,7 @@ namespace CloudCoin.CE.iOS
 
         public string GetHomeFolder()
         {
-            return Android.OS.Environment.ExternalStorageDirectory.ToString() + "/CloudCoin";
+            throw new NotImplementedException();
         }
 
         public void SendMail(string folder, string[] filenames) {

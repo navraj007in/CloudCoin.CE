@@ -34,7 +34,7 @@ namespace CloudCoin.CE
             var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             if(Device.RuntimePlatform == Device.Android) 
             {
-                homefolder = Android.OS.Environment.ExternalStorageDirectory.ToString() + "/CloudCoin";
+               // homefolder = Android.OS.Environment.ExternalStorageDirectory.ToString() + "/CloudCoin";
             }
             else 
                 homefolder = documents + "/CloudCoin";
@@ -60,7 +60,7 @@ namespace CloudCoin.CE
             Title = "CloudCoin CE ver 1.0";
             Task.Run(() => {
                 echoRaida();
-                import();
+                //import();
             });
 
             //var directories = Directory.EnumerateDirectories("./");
@@ -643,7 +643,7 @@ namespace CloudCoin.CE
             FrameBackground.IsVisible = true;
             FrameSafeAction.IsVisible = true;
         }
-        async void OnTappedImport(object sender, EventArgs e)
+        void OnTappedImport(object sender, EventArgs e)
         {
 
             if(Device.RuntimePlatform == Device.Android)
@@ -653,7 +653,7 @@ namespace CloudCoin.CE
             try
             {
                 var iFilePicker = DependencyService.Get<IFilePicker>();
-                FileData filedata = await iFilePicker.PickFile(fileUtils.importFolder);
+                FileData filedata = iFilePicker.PickFile(fileUtils.importFolder).Result;
 
                 //indicator.IsVisible = true;
 

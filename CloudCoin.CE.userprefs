@@ -1,7 +1,7 @@
-﻿<Properties StartupConfiguration="{B2417C84-E981-4734-9936-B92B2A51F84F}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CloudCoin.CE/CloudCoinPage.xaml.cs">
+﻿<Properties StartupConfiguration="{D2E45F58-1305-4F45-8EB3-62B01B3AC259}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/FilePicker.cs">
     <Files>
-      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="37" Column="65" />
+      <File FileName="CloudCoin.CE/CloudCoinPage.xaml.cs" Line="313" Column="10" />
       <File FileName="CloudCoin.CE/CloudCoinPage.xaml" Line="370" Column="1" />
       <File FileName="CloudCoin.CE/Importer.cs" Line="51" Column="1" />
       <File FileName="CloudCoin.CE/MultiDetect.cs" Line="139" Column="1" />
@@ -10,12 +10,12 @@
       <File FileName="CloudCoin.CE/Detector.cs" Line="13" Column="35" />
       <File FileName="CloudCoin.CE/Core/DetectionAgent.cs" Line="111" Column="1" />
       <File FileName="iOS/Info.plist" />
-      <File FileName="Droid/FilePickerImplementationn.cs" Line="23" Column="18" />
       <File FileName="Droid/IOUtil.cs" Line="16" Column="28" />
       <File FileName="CloudCoin.CE/Interface/Mailer.cs" Line="6" Column="17" />
       <File FileName="iOS/Mail.cs" Line="25" Column="49" />
       <File FileName="iOS/FilePicker.cs" Line="1" Column="1" />
       <File FileName="iOS/FilePickerImplementation.cs" Line="429" Column="20" />
+      <File FileName="Droid/FilePicker.cs" Line="18" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
@@ -37,7 +37,7 @@
   <MonoDevelop.Ide.ItemProperties.CloudCoinCE PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.B4CE1E3E-6989-4B4B-95D9-60F89A505AC3" identitySerialNumber="1433F0AFCB507A87">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="62UR93U2G9" TeamId="9M3DA6YP8B" />
   </MonoDevelop.Ide.ItemProperties.CloudCoinCE>
-  <MonoDevelop.Ide.ItemProperties.CloudCoin.CE.Droid PreferredExecutionTarget="Android.Android_Accelerated_x86" />
+  <MonoDevelop.Ide.ItemProperties.CloudCoin.CE.Droid PreferredExecutionTarget="Android.ce081718f039bf05027e" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="CloudCoin.CE/CloudCoinPage.xaml.cs" line="161" offsetX="573" offsetY="2400" expression="filesim[0]" liveUpdate="False" />
   </MonoDevelop.Ide.DebuggingService.PinnedWatches>

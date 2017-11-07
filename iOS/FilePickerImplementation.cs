@@ -426,7 +426,8 @@ namespace CloudCoin.CE.iOS
 
         public string GetHomeFolder()
         {
-            return Android.OS.Environment.ExternalStorageDirectory.ToString() + "/CloudCoin";
+            return "";
+            //return Android.OS.Environment.ExternalStorageDirectory.ToString() + "/CloudCoin";
         }
     }
 }

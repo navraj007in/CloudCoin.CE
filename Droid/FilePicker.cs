@@ -13,6 +13,11 @@ namespace CloudCoin.CE.Droid
         {
         }
 
+        public string GetHomeFolder()
+        {
+            return "";  
+        }
+
         public void pickFile()
         {
      
