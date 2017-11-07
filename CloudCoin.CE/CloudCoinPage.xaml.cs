@@ -164,7 +164,7 @@ namespace CloudCoin.CE
                 Console.WriteLine(label + "-" + file);
             }
         }
-        public void multi_detect()
+        public async Task multi_detect()
         {
             Console.Out.WriteLine("");
             Console.Out.WriteLine("  Detecting Authentication of Suspect Coins");// "Detecting Authentication of Suspect Coins");
@@ -179,7 +179,7 @@ namespace CloudCoin.CE
                 detectTime = RAIDA_Status.getLowest21() + 200;
             }//Slow connection
 
-            multi_detector.detectMulti(detectTime);
+            await multi_detector.detectMulti(detectTime);
             // grade();
             // showCoins();
 
@@ -206,7 +206,7 @@ namespace CloudCoin.CE
         }//end detect
 
 
-        public void import(int resume = 0)
+        public async void import(int resume = 0)
         {
 
             //Check RAIDA Status
@@ -220,7 +220,7 @@ namespace CloudCoin.CE
                 updateLog("  Finishing importing coins from last time...");
 
                 Console.ForegroundColor = ConsoleColor.White;
-                multi_detect();
+                await multi_detect();
                 Console.Out.WriteLine("  Now looking in import folder for new coins...");// "Now looking in import folder for new coins...");
                 updateLog("  Now looking in import folder for new coins...");
             } //end if there are files in the suspect folder that need to be imported
@@ -257,7 +257,7 @@ namespace CloudCoin.CE
                 TimeSpan ts = new TimeSpan();
                 //Console.Out.WriteLine("  IMPORT DONE> NOW DETECTING MULTI. Do you want to start detecting?");// "No coins in import folder.");
                 // Console.In.ReadLine();
-                multi_detect();
+                await multi_detect();
                 // Console.Out.WriteLine("  DETCATION DONE> NOW GRADING. Do you want to start Grading?");// "No coins in import folder.");
                 // Console.In.ReadLine();
                 after = DateTime.Now;
