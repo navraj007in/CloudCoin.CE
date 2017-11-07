@@ -111,7 +111,7 @@ namespace Founders
 
 		}//end detectOneMulti
 
-		public CoinUtils[] detectMultiCoin(CoinUtils[] cu, int milliSecondsToTimeOut)
+		public async Task<CoinUtils[]> detectMultiCoin(CoinUtils[] cu, int milliSecondsToTimeOut)
 		{
             //Make arrays to stripe the coins
             milliSecondsToTimeOut = 60000;
@@ -262,7 +262,7 @@ namespace Founders
 
 			var taskList = new List<Task> { t00, t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22, t23, t24 };
 
-			Task.WaitAll(taskList.ToArray(), milliSecondsToTimeOut);
+			Task.WhenAll(taskList.ToArray());
 
 			//Get data from the detection agents
 			for (int i = 0; i < nns.Length; i++)
