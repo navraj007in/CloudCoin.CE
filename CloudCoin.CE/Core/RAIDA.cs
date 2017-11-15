@@ -111,7 +111,7 @@ namespace Founders
 
 		}//end detectOneMulti
 
-		public async Task<CoinUtils[]> detectMultiCoin(CoinUtils[] cu, int milliSecondsToTimeOut)
+		public CoinUtils[] detectMultiCoin(CoinUtils[] cu, int milliSecondsToTimeOut)
 		{
             //Make arrays to stripe the coins
             milliSecondsToTimeOut = 60000;
@@ -262,7 +262,7 @@ namespace Founders
 
 			var taskList = new List<Task> { t00, t01, t02, t03, t04, t05, t06, t07, t08, t09, t10, t11, t12, t13, t14, t15, t16, t17, t18, t19, t20, t21, t22, t23, t24 };
 
-			await Task.WhenAll(taskList.ToArray());
+			Task.WaitAll(taskList.ToArray(), milliSecondsToTimeOut);
 
 			//Get data from the detection agents
 			for (int i = 0; i < nns.Length; i++)
@@ -284,7 +284,7 @@ namespace Founders
 				cu[i].setAnsToPansIfPassed();
 				cu[i].calculateHP();
 				cu[i].calcExpirationDate();
-				cu[i].grade();
+				cu[i].sortToFolder();
 			}//end for each detection agent
 
 			return cu;//Return the array of coins detected
@@ -344,7 +344,7 @@ namespace Founders
 			cu.calculateHP();
 			// cu.gradeCoin(); // sets the grade and figures out what the file extension should be (bank, fracked, counterfeit, lost
 			cu.calcExpirationDate();
-			cu.grade();
+            cu.sortToFolder();
 
 			return cu;
 		}//end detect coin

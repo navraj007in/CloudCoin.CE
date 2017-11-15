@@ -23,6 +23,7 @@ namespace CloudCoinCore
 		public static String recieptsFolder = "Reciepts";
         public static String lostFolder = "Lost";
         public static String sentFolder = "Sent";
+        public static String dangerFolder = "Danger";
 
 
 

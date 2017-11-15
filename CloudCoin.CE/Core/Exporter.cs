@@ -38,7 +38,7 @@ namespace Founders
             int totalSaved = m1 + (m5 * 5) + (m25 * 25) + (m100 * 100) + (m250 * 250);// Total value of all coins
             int coinCount = m1 + m5 + m25 + m100 + m250; // Total number of coins 
             String[] coinsToDelete = new String[coinCount];
-            String[] bankedFileNames = new DirectoryInfo(this.fileUtils.counterfeitFolder).GetFiles().Select(o => o.Name).ToArray(); // list all file names with bank extension
+            String[] bankedFileNames = new DirectoryInfo(this.fileUtils.bankFolder).GetFiles().Select(o => o.Name).ToArray(); // list all file names with bank extension
             String[] frackedFileNames = new DirectoryInfo(this.fileUtils.frackedFolder).GetFiles().Select(o => o.Name).ToArray(); // list all file names with bank extension
             String[] partialFileNames = new DirectoryInfo(this.fileUtils.partialFolder).GetFiles().Select(o => o.Name).ToArray();
 
@@ -54,7 +54,7 @@ namespace Founders
             // Look at all the money files and choose the ones that are needed.
             for (int i = 0; i < bankedFileNames.Length; i++)
             {
-                String bankFileName = (this.fileUtils.counterfeitFolder + bankedFileNames[i]);
+                String bankFileName = (this.fileUtils.bankFolder + bankedFileNames[i]);
                 String frackedFileName = (this.fileUtils.frackedFolder + bankedFileNames[i]);
                 String partialFileName = (this.fileUtils.partialFolder + bankedFileNames[i]);
 
@@ -124,7 +124,7 @@ namespace Founders
             // Track the total coins
             int coinCount = m1 + m5 + m25 + m100 + m250;
             String[] coinsToDelete = new String[coinCount];
-            String[] bankedFileNames = new DirectoryInfo(this.fileUtils.counterfeitFolder).GetFiles().Select(o => o.Name).ToArray();//Get all names in bank folder
+            String[] bankedFileNames = new DirectoryInfo(this.fileUtils.bankFolder).GetFiles().Select(o => o.Name).ToArray();//Get all names in bank folder
             String[] frackedFileNames = new DirectoryInfo(this.fileUtils.frackedFolder).GetFiles().Select(o => o.Name).ToArray(); ;
             String[] partialFileNames = new DirectoryInfo(this.fileUtils.partialFolder).GetFiles().Select(o => o.Name).ToArray();
             // Add the two arrays together
@@ -152,7 +152,7 @@ namespace Founders
             for (int i = 0; (i < bankedFileNames.Length); i++)
             {
                 denomination = bankedFileNames[i].Split('.')[0];
-                bankFileName = this.fileUtils.counterfeitFolder + bankedFileNames[i];//File name in bank folder
+                bankFileName = this.fileUtils.bankFolder + bankedFileNames[i];//File name in bank folder
                 frackedFileName = this.fileUtils.frackedFolder + bankedFileNames[i];//File name in fracked folder
                 partialFileName = this.fileUtils.partialFolder + bankedFileNames[i];
                 if (denomination == "1" && m1 > 0)
