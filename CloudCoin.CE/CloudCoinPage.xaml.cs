@@ -144,7 +144,18 @@ namespace CloudCoin.CE
 
             }
 
+            var importfiles = Directory.GetFiles("CloudCoin/Import");
+            foreach (var file in tempfiles)
+            {
 
+                //Console.WriteLine(file);
+                if (File.Exists(fileUtils.importFolder + Path.GetFileName(file)))
+                    File.Delete(fileUtils.importFolder + Path.GetFileName(file));
+
+                File.Copy(file, fileUtils.importFolder + Path.GetFileName(file));
+                //Console.WriteLine("File Copied succesfully to " + fileUtils.templateFolder + Path.GetFileName(file));
+
+            }
 
 
             //listDirContents(fileUtils.templateFolder, "Templates");
@@ -643,7 +654,7 @@ namespace CloudCoin.CE
             FrameBackground.IsVisible = true;
             FrameSafeAction.IsVisible = true;
         }
-        void OnTappedImport(object sender, EventArgs e)
+        async void OnTappedImport(object sender, EventArgs e)
         {
 
             if(Device.RuntimePlatform == Device.Android)
@@ -653,7 +664,7 @@ namespace CloudCoin.CE
             try
             {
                 var iFilePicker = DependencyService.Get<IFilePicker>();
-                FileData filedata = iFilePicker.PickFile(fileUtils.importFolder).Result;
+                FileData filedata = await iFilePicker.PickFile(fileUtils.importFolder);
 
                 //indicator.IsVisible = true;
 

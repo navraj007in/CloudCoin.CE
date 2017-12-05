@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_AppExtensionDebugSymbolProperties Include="shareExtension.appex">
+      <CompiledArchitectures>ARM64</CompiledArchitectures>
+      <NativeExecutable>shareExtension</NativeExecutable>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <SymbolsList>/Users/navrajsingh/ccce/CloudCoin.CE/shareExtension/obj/iPhone/Debug/mtouch-symbols.list</SymbolsList>
+      <NoDSymUtil>false</NoDSymUtil>
+    </_AppExtensionDebugSymbolProperties>
+  </ItemGroup>
+</Project>
