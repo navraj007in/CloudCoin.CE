@@ -628,7 +628,7 @@ namespace Founders
             }//end if is dangerous
 
             recordPown();
-            folder = Folder.Dangerous;//If you get down here, the coin is dangerous and needs to be defracked then detected again.
+            folder = Folder.Dangerous;
 
             if (!isGradablePass())
             {
@@ -639,7 +639,7 @@ namespace Founders
                 }//end no responses
                 folder = Folder.Suspect;
                 return;
-            }//if is gradable
+            }//if is gradable//If you get down here, the coin is dangerous and needs to be defracked then detected again.
         }//end sort folder
 
         public void sortFoldersAfterFixingDangerous()

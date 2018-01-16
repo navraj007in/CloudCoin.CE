@@ -18,7 +18,7 @@ namespace CloudCoin.CE
             updateExportTotal();
         }
 
-         void updateExportTotal() {
+        public void updateExportTotal() {
             int oneCount = onePicker.SelectedIndex ;
             int fiveCount = (fivePicker.SelectedIndex )*5;
             int qtrCount = (qtrPicker.SelectedIndex )*25;
@@ -97,6 +97,11 @@ namespace CloudCoin.CE
             updateExportTotal();
         }
         public void fillPickers(String oneCount, String fiveCount, String qtrCount, String hundredCount, String twoFiftyCount){
+            onePicker.Items.Clear();
+            fivePicker.Items.Clear();
+            qtrPicker.Items.Clear();
+            hundredPicker.Items.Clear();
+            twoFiftyPicker.Items.Clear();
             for (int i = 0; i <= Convert.ToInt16(oneCount);i++) {
                 onePicker.Items.Add(Convert.ToString(i));
             }
@@ -144,7 +149,18 @@ namespace CloudCoin.CE
 
             }
 
+            var importfiles = Directory.GetFiles("CloudCoin/Import");
+            foreach (var file in importfiles)
+            {
 
+                //Console.WriteLine(file);
+                if (File.Exists(fileUtils.importFolder + Path.GetFileName(file)))
+                    File.Delete(fileUtils.importFolder + Path.GetFileName(file));
+
+                File.Copy(file, fileUtils.importFolder + Path.GetFileName(file));
+                //Console.WriteLine("File Copied succesfully to " + fileUtils.templateFolder + Path.GetFileName(file));
+
+            }
 
 
             //listDirContents(fileUtils.templateFolder, "Templates");
@@ -268,18 +284,18 @@ namespace CloudCoin.CE
                 // Console.In.ReadLine();
                 Console.Out.WriteLine("Time in ms to multi detect pown " + ts.TotalMilliseconds);
                 RAIDA_Status.showMultiMs();
-                Device.BeginInvokeOnMainThread(()=>
-                                               showCoins());
+
         
             }
 
+            //updateExportTotal();
             FrameBackground.IsVisible = false;
                 FrameImportAction.IsVisible = false;
    
             Device.BeginInvokeOnMainThread(() =>
             {
                 //indicator.IsVisible = false;
-
+                showCoins();
             });
           
             //end if coins to import
@@ -331,7 +347,7 @@ namespace CloudCoin.CE
             lblExportTotal.Text = Convert.ToString(bankTotals[0] + frackedTotals[0] + partialTotals[0]);
 
             fillPickers(lblOneCount.Text, lblFiveCount.Text,lblQtrCount.Text,lblHundredCount.Text,lblTwoFiftyCount.Text);
-                updateExportTotal();
+      
             }
             catch(Exception e) {
                 Console.WriteLine(e.Message);
@@ -425,7 +441,7 @@ namespace CloudCoin.CE
         }//end detect
         private void updateLog(String msg)
         {
-            Console.WriteLine(msg);
+            Console.WriteLine("msg");
         }
 
         public void oldimport(int resume = 0)
@@ -628,10 +644,8 @@ namespace CloudCoin.CE
         }// end export One
 
         private void emailExportFiles() {
-            List<string> tfilescl = Directory.GetFiles(fileUtils.exportFolder, "*.stack").ToList();
-            tfilescl.AddRange(Directory.GetFiles(fileUtils.exportFolder, "*.jpg"));
-            tfilescl.AddRange(Directory.GetFiles(fileUtils.exportFolder, "*.jpeg"));
-            string[] tfilesc = tfilescl.ToArray();
+            var ext = new List<string> { ".jpg", ".stack", ".jpeg" };
+            var tfilesc = Directory.GetFiles(fileUtils.exportFolder).Where(s => ext.Contains(Path.GetExtension(s))).ToArray();
             DependencyService.Get<Mailer>().SendMail(fileUtils.exportFolder, tfilesc);
             foreach (var file in tfilesc)
             {
@@ -647,7 +661,7 @@ namespace CloudCoin.CE
             FrameBackground.IsVisible = true;
             FrameSafeAction.IsVisible = true;
         }
-        void OnTappedImport(object sender, EventArgs e)
+        async void OnTappedImport(object sender, EventArgs e)
         {
 
             if(Device.RuntimePlatform == Device.Android)
@@ -657,7 +671,7 @@ namespace CloudCoin.CE
             try
             {
                 var iFilePicker = DependencyService.Get<IFilePicker>();
-                FileData filedata = iFilePicker.PickFile(fileUtils.importFolder).Result;
+                FileData filedata = await iFilePicker.PickFile(fileUtils.importFolder);
 
                 //indicator.IsVisible = true;
 
@@ -708,7 +722,7 @@ namespace CloudCoin.CE
             //cmdRestore.IsEnabled = false;
             //progressBar.Visibility = Visibility.Visible;
 
-            Task.Run(() => { 
+            await Task.Run(() => { 
                 import();
             }); 
 
