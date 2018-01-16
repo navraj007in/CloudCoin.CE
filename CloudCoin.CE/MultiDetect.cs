@@ -16,6 +16,7 @@ namespace Founders
         //public RichTextBox txtLogs;
 
         public int totalImported = 0;
+        public int totalCounterfeit = 0;
         public ProgressBar importBar;
 
         /*  CONSTRUCTOR */
@@ -31,12 +32,15 @@ namespace Founders
         {
             bool stillHaveSuspect = true;
             int coinNames = 0;
+            int total = 0;
+            int loops = 0;
 
             while (stillHaveSuspect)
             {
                 // LOAD ALL SUSPECT COIN NAMES IN AN ARRAY OF NAMES
                 String[] suspectFileNames = new DirectoryInfo(this.fileUtils.suspectFolder).GetFiles().Select(o => o.Name).ToArray();//Get all files in suspect folder
-
+                if (suspectFileNames.Length > total)
+                    total = suspectFileNames.Length;
                 //CHECK TO SEE IF ANY OF THE FILES ARE ALREADY IN BANK. DELETE IF SO
                 for (int i = 0; i < suspectFileNames.Length; i++)//for up to 200 coins in the suspect folder
                 {
@@ -86,7 +90,7 @@ namespace Founders
                 //Receipt receipt = createReceipt(coinNames, receiptFile);
 
                 //raida.txtLogs = txtLogs;
-                totalImported = 0;
+                //totalImported = 0;
                 for (int i = 0; i < coinNames; i++)//for up to 200 coins in the suspect folder
                 {
 
@@ -95,7 +99,7 @@ namespace Founders
                         cloudCoin[i] = this.fileUtils.loadOneCloudCoinFromJsonFile(this.fileUtils.suspectFolder + suspectFileNames[i]);
                         cu[i] = new CoinUtils(cloudCoin[i]);
 
-                        Console.Out.WriteLine("  Now scanning coin " + (i + 1) + " of " + suspectFileNames.Length + 
+                        Console.Out.WriteLine("  Now scanning coin " + (i + 1 + loops*200) + " of " + suspectFileNames.Length + 
                                               " for counterfeit. SN " + string.Format("{0:n0}", 
                                                                                       cloudCoin[i].sn) + ", Denomination: " + 
                                               cu[i].getDenomination());
@@ -112,11 +116,11 @@ namespace Founders
 
                         //updateLog("  Now scanning coin " + (i + 1) + " of " + suspectFileNames.Length + " for counterfeit. SN " + string.Format("{0:n0}", cloudCoin[i].sn) + ", Denomination: " + cu[i].getDenomination());
                         Device.BeginInvokeOnMainThread(()=>{
-                            importBar.Progress = (i*100 /coinNames);
+                            importBar.Progress = (i*100 /total);
 
                         });
                         updateLog("Authenticating a " + cu[i].getDenomination() +
-                            " CoinCoin note (" + cloudCoin[i].sn + "): " + (i + 1) + " of " + coinNames);
+                                  " CoinCoin note (" + cloudCoin[i].sn + "): " + (i + 1 + loops*200) + " of " + total);
                     }
                     catch (FileNotFoundException ex)
                     {
@@ -140,17 +144,22 @@ namespace Founders
                 var frackedCoins = detectedCC.Where(o => o.folder == CoinUtils.Folder.Fracked);
                 var counterfeitCoins = detectedCC.Where(o => o.folder == CoinUtils.Folder.Counterfeit);
 
-                totalImported = 0;
+                //totalImported = 0;
                 foreach (CoinUtils ccc in bankCoins)
                 {
-                    fileUtils.writeTo(fileUtils.bankFolder, ccc.cc);
+                    //fileUtils.writeTo(fileUtils.bankFolder, ccc.cc);
                     totalImported++;
                 }
 
                 foreach (CoinUtils ccf in frackedCoins)
                 {
-                    fileUtils.writeTo(fileUtils.frackedFolder, ccf.cc);
+                    //fileUtils.writeTo(fileUtils.frackedFolder, ccf.cc);
                     totalImported++;
+                }
+
+                foreach (CoinUtils cccf in counterfeitCoins)
+                {
+                    totalCounterfeit++;
                 }
 
                 //Write the coins to the detected folder delete from the suspect
@@ -163,8 +172,10 @@ namespace Founders
 
                 //Console.WriteLine("Total Imported Coins - " + totalImported);
                 //Console.WriteLine("Total Counterfeit detected - " + counterfeitCoins.ToArray().Length);
-                updateLog("Total Imported Coins - " + totalImported);
-                updateLog("Total Counterfeit detected - " + counterfeitCoins.ToArray().Length);
+                updateLog("Total Imported Coins : " + totalImported);
+                updateLog("Total Counterfeits : "  + totalCounterfeit);
+                updateLog("Coins still being processed : " + detectedCC.Where(o => o.folder == CoinUtils.Folder.Dangerous).ToArray().Length);
+                loops++;
 
             }//end while still have suspect
             return coinNames;

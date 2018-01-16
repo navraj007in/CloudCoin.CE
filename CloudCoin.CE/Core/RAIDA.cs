@@ -284,7 +284,7 @@ namespace Founders
 				cu[i].setAnsToPansIfPassed();
 				cu[i].calculateHP();
 				cu[i].calcExpirationDate();
-				cu[i].grade();
+				cu[i].sortToFolder();
 			}//end for each detection agent
 
 			return cu;//Return the array of coins detected
@@ -344,7 +344,7 @@ namespace Founders
 			cu.calculateHP();
 			// cu.gradeCoin(); // sets the grade and figures out what the file extension should be (bank, fracked, counterfeit, lost
 			cu.calcExpirationDate();
-			cu.grade();
+            cu.sortToFolder();
 
 			return cu;
 		}//end detect coin

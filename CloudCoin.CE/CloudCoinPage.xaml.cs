@@ -18,7 +18,7 @@ namespace CloudCoin.CE
             updateExportTotal();
         }
 
-        public void updateExportTotal() {
+         void updateExportTotal() {
             int oneCount = onePicker.SelectedIndex ;
             int fiveCount = (fivePicker.SelectedIndex )*5;
             int qtrCount = (qtrPicker.SelectedIndex )*25;
@@ -279,7 +279,8 @@ namespace CloudCoin.CE
                 // Console.In.ReadLine();
                 Console.Out.WriteLine("Time in ms to multi detect pown " + ts.TotalMilliseconds);
                 RAIDA_Status.showMultiMs();
-                showCoins();
+                Device.BeginInvokeOnMainThread(()=>
+                                               showCoins());
         
             }
 
@@ -341,7 +342,7 @@ namespace CloudCoin.CE
             lblExportTotal.Text = Convert.ToString(bankTotals[0] + frackedTotals[0] + partialTotals[0]);
 
             fillPickers(lblOneCount.Text, lblFiveCount.Text,lblQtrCount.Text,lblHundredCount.Text,lblTwoFiftyCount.Text);
-      
+                updateExportTotal();
             }
             catch(Exception e) {
                 Console.WriteLine(e.Message);
@@ -435,7 +436,7 @@ namespace CloudCoin.CE
         }//end detect
         private void updateLog(String msg)
         {
-            Console.WriteLine("msg");
+            Console.WriteLine(msg);
         }
 
         public void oldimport(int resume = 0)
@@ -638,7 +639,10 @@ namespace CloudCoin.CE
         }// end export One
 
         private void emailExportFiles() {
-            var tfilesc = Directory.GetFiles(fileUtils.exportFolder);
+            List<string> tfilescl = Directory.GetFiles(fileUtils.exportFolder, "*.stack").ToList();
+            tfilescl.AddRange(Directory.GetFiles(fileUtils.exportFolder, "*.jpg"));
+            tfilescl.AddRange(Directory.GetFiles(fileUtils.exportFolder, "*.jpeg"));
+            string[] tfilesc = tfilescl.ToArray();
             DependencyService.Get<Mailer>().SendMail(fileUtils.exportFolder, tfilesc);
             foreach (var file in tfilesc)
             {

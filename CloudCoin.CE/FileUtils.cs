@@ -30,6 +30,7 @@ namespace Founders
         public String languageFolder;
         public string detectedFolder;
         public string receiptsFolder;
+        public string dangerFolder;
         public string lostFolder;
         public string sentFolder;
 
@@ -52,11 +53,12 @@ namespace Founders
             String recieptsFolder = rootFolder + "/" + Config.recieptsFolder + "/";
             String sentFolder = rootFolder + "/" + Config.sentFolder + "/";
             String lostFolder = rootFolder + "/" + Config.lostFolder + "/";
+            String dangerFolder = rootFolder + "/" + Config.dangerFolder + "/";
 
             FileUtils fileUtils = new FileUtils(rootFolder, importFolder, importedFolder,
                                                 trashFolder, suspectFolder, frackedFolder,
                                                 bankFolder, templateFolder, counterfeitFolder,
-                                                directoryFolder, exportFolder, partialFolder, detectedFolder, recieptsFolder, lostFolder,sentFolder);
+                                                directoryFolder, exportFolder, partialFolder, detectedFolder, recieptsFolder, lostFolder,sentFolder, dangerFolder);
 
             return fileUtils;
         }
@@ -65,7 +67,7 @@ namespace Founders
                           String trashFolder, String suspectFolder, String frackedFolder, 
                           String bankFolder, String templateFolder, String counterfeitFolder, 
                           String directoryFolder, String exportFolder, String partialFolder,
-                         String detectedFolder,String recieptsFolder, string lostFolder, string sentFolder)
+                         String detectedFolder,String recieptsFolder, string lostFolder, string sentFolder, string dangerFolder)
         {
             //  initialise instance variables
             this.rootFolder = rootFolder;
@@ -83,6 +85,7 @@ namespace Founders
             this.detectedFolder = detectedFolder;
             this.receiptsFolder = recieptsFolder;
             this.lostFolder = lostFolder;
+            this.dangerFolder = dangerFolder;
             this.sentFolder = sentFolder;
         }  // End constructor
 
@@ -104,6 +107,7 @@ namespace Founders
                 Directory.CreateDirectory(detectedFolder);
                 Directory.CreateDirectory(receiptsFolder);
                 Directory.CreateDirectory(lostFolder);
+                Directory.CreateDirectory(dangerFolder);
                 Directory.CreateDirectory(sentFolder);
 
             }
@@ -151,7 +155,7 @@ namespace Founders
 
 			}
             catch(Exception ex){
-                //Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message);
             }
             //Load file as JSON
    

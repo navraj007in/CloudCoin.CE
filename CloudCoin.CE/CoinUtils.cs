@@ -409,7 +409,7 @@ namespace Founders
         {
             //The coin is considered ungradable if it does not get more than 19 RAIDA available
             bool returnTruth = false;
-            if (charCount(cc.pown, 'f') + charCount(cc.pown, 'p') > 16 && isFixable() && !isDangerous())
+            if (charCount(cc.pown, 'f') + charCount(cc.pown, 'p') > 16 && isFixable())
             {
                 returnTruth = true;
                 Console.Out.WriteLine("isGradable");
@@ -597,16 +597,7 @@ namespace Founders
                 return;
             }//if is counterfeit
 
-            if (!isGradablePass())
-            {
-                if (noResponses())
-                {
-                    folder = Folder.Lost;
-                    return;
-                }//end no responses
-                folder = Folder.Suspect;
-                return;
-            }//if is gradable
+
 
             if (!isFracked())
             {
@@ -638,6 +629,17 @@ namespace Founders
 
             recordPown();
             folder = Folder.Dangerous;//If you get down here, the coin is dangerous and needs to be defracked then detected again.
+
+            if (!isGradablePass())
+            {
+                if (noResponses())
+                {
+                    folder = Folder.Lost;
+                    return;
+                }//end no responses
+                folder = Folder.Suspect;
+                return;
+            }//if is gradable
         }//end sort folder
 
         public void sortFoldersAfterFixingDangerous()
